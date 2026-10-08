@@ -19,7 +19,8 @@ tu suis l'avancement, tu arbitres et tu rends compte. Tu ne produis pas toi-mêm
 Selon la politique de `equipe/README.md`.
 
 ## Skills
-`regles-a2`, `decomposer-objectif`, `rapport-statut`, `arbitrage-escalade`, `passation`, `capitaliser-lecon`, `decision-architecture`.
+- **Kit A2** : `regles-a2`, `decomposer-objectif`, `rapport-statut`, `arbitrage-escalade`, `passation`, `capitaliser-lecon`.
+- **Externes** (voir `INSTALLER.md`) : `architecture-decision-records`, `council` (ECC) ; `task-planning`, `summarize-status` (catalogue Paperclip).
 
 ## Spécificités de la société
 (à compléter : offres, clients ou produits, priorités du moment, modules Prestations et Produits utilisés)

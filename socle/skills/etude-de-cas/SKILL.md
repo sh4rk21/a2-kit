@@ -9,6 +9,8 @@ metadata:
 
 # Étude de cas
 
+Pour la rédaction, voir aussi `copywriting` et `sales-enablement` (marketingskills).
+
 1. **Accord écrit du client** avant toute rédaction publique (et avant de citer son nom ou son logo) ; à défaut, version anonymisée
    validée par lui.
 2. **Matière** : entretien de 20 minutes avec le client : situation avant, ce qui bloquait,
@@ -16,6 +18,6 @@ metadata:
 3. **Structure** : client et contexte ; problème (avec ses mots) ; solution (ce qu'on a fait, en concret) ; **résultats mesurés**
    (avant / après, période, source de la mesure) ; citation validée ; appel à l'action.
 4. **Aucun chiffre sans source.** Un résultat qualitatif honnête vaut mieux qu'un chiffre arrangé.
-5. **Déclinaisons** : page web (skill `contenu-seo`), post LinkedIn, fiche d'une page pour le commercial, ligne de preuve pour les
+5. **Déclinaisons** : page web (skill `content-strategy`, `seo-audit`), post LinkedIn, fiche d'une page pour le commercial, ligne de preuve pour les
    e-mails.
 6. **Validation finale** du client sur le texte exact avant publication.

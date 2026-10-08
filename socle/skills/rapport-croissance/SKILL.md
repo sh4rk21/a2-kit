@@ -9,6 +9,8 @@ metadata:
 
 # Rapport de croissance
 
+Pour la mise en place du suivi (GA4, événements, conversions) et l'attribution, voir `analytics` et `attribution` (marketingskills).
+
 **Règle** : uniquement des chiffres mesurés, avec leur source et leur période. Un chiffre indisponible s'écrit « non mesuré »,
 jamais estimé en silence.
 

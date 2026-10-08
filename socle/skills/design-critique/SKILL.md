@@ -10,6 +10,8 @@ metadata:
 
 # Critique de design
 
+S'appuie sur le skill `impeccable` (commandes `critique`, `audit`, puis `polish`, `quieter` ou `bolder` selon le verdict) et sur `make-interfaces-feel-better` (ECC) pour les finitions ; ce skill ajoute la conformité au DESIGN.md du projet et aux règles A2.
+
 À partir des captures du skill `ui-controle-visuel` (375, 768, 1440 px, clair et sombre) :
 1. **Conformité** au DESIGN.md : couleurs, typographies, espacements, composants, geste fort présent à un seul endroit.
 2. **Hiérarchie** : l'œil va-t-il d'abord à la tâche principale de PRODUCT.md ? Un seul appel à l'action principal par écran.

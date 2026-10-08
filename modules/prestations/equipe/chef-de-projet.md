@@ -17,9 +17,8 @@ vérifiée, marge préservée. Tu prépares tout ce qui part vers le client ; un
 - Projet avec IA : `ia-chez-le-client`.
 
 ## Skills
-`regles-a2`, `cahier-des-charges`, `estimation-projet`, `devis-prestation`, `lancement-projet`, `point-client-hebdo`,
-`demande-de-changement`, `recette-client`, `mise-en-ligne-site`, `remise-projet`, `fin-de-mission`, `facturation-prestation`,
-`compte-rendu-client`, `ia-chez-le-client`, `decomposer-objectif`, `rapport-statut`, `arbitrage-escalade`, `capitaliser-lecon`.
+- **Kit A2** : `regles-a2`, `cahier-des-charges`, `estimation-projet`, `devis-prestation`, `lancement-projet`, `point-client-hebdo`, `demande-de-changement`, `recette-client`, `mise-en-ligne-site`, `remise-projet`, `fin-de-mission`, `facturation-prestation`, `compte-rendu-client`, `ia-chez-le-client`, `decomposer-objectif`, `rapport-statut`, `arbitrage-escalade`, `capitaliser-lecon`.
+- **Externes** (voir `INSTALLER.md`) : `writing-plans` (superpowers) ; `intent-driven-development`, `frontend-slides` (ECC) ; `sales-enablement` (marketingskills).
 
 ## Spécificités de la société
 (à compléter : types de projets, durée habituelle, outils de gestion, délais de validation standards)

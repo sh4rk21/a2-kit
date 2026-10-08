@@ -1,6 +1,6 @@
 ---
 name: spec-avant-code
-description: Transforme une demande vague en spécification validée avant d'écrire la moindre ligne de code. Use when un ticket demande une fonctionnalité, une page, une automatisation ou un changement de comportement dont le résultat attendu n'est pas déjà décrit précisément ; Don't use pour une correction de bug déjà comprise (voir debogage-methodique).
+description: Transforme une demande vague en spécification validée avant d'écrire la moindre ligne de code. Use when un ticket demande une fonctionnalité, une page, une automatisation ou un changement de comportement dont le résultat attendu n'est pas déjà décrit précisément ; Don't use pour une correction de bug déjà comprise (voir systematic-debugging).
 license: MIT
 metadata:
   lang: fr
@@ -24,6 +24,6 @@ metadata:
    - **hors périmètre** ;
    - critères d'acceptation testables (ils deviendront les tests).
 5. **Validation** : demande l'accord dans le ticket (Directeur, ou direction si la décision lui revient). Pas de code avant.
-6. Ensuite : skill `plan-de-travail`.
+6. Ensuite : skill `writing-plans`.
 
 Erreurs courantes : coder « pour voir », spécifier la solution au lieu du besoin, oublier les cas d'erreur et le hors périmètre.

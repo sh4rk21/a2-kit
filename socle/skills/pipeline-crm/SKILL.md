@@ -9,6 +9,8 @@ metadata:
 
 # Pipeline commercial
 
+Pour les processus de cycle de vie des contacts et le passage marketing vers ventes, voir aussi `revops` (marketingskills).
+
 **Étapes** (critère de passage entre parenthèses) :
 1. Prospect (correspond à l'ICP) ; 2. Contacté (premier message envoyé) ; 3. Échange (réponse positive) ;
 4. Qualifié (besoin, budget, décideur et échéance connus) ; 5. Proposition envoyée ; 6. Négociation ; 7. Gagné / Perdu (raison notée).

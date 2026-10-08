@@ -9,6 +9,8 @@ metadata:
 
 # Contrôle visuel
 
+Outils associés : `agent-browser` (catalogue Paperclip), `browser-qa` et `click-path-audit` (ECC), `webapp-testing` (Anthropic).
+
 1. **Lance** le projet en local (ou un aperçu) et ouvre la page avec le MCP Chrome DevTools (en mode headless) ou Playwright.
 2. **Captures** à 375, 768 et 1440 px de large, en clair et en sombre si le projet a les deux ; avec contenu réel, et dans les états
    vide, erreur et chargement quand ils existent.

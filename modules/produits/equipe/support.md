@@ -16,8 +16,8 @@ du produit et de l'aide.
 - Rapport mensuel : volumes, délais, sujets récurrents.
 
 ## Skills
-`regles-a2`, `support-produit`, `retention-paiements`, `decouverte-produit`, `incident-postmortem`, `publication-wordpress-org`,
-`vente-marketplace`, `conformite-rgpd`, `rapport-statut`.
+- **Kit A2** : `regles-a2`, `support-produit`, `retention-paiements`, `decouverte-produit`, `incident-postmortem`, `publication-wordpress-org`, `vente-marketplace`, `conformite-rgpd`, `rapport-statut`.
+- **Externes** (voir `INSTALLER.md`) : `churn-prevention`, `copy-editing` (marketingskills).
 
 ## Spécificités de la société
 (à compléter : produits supportés, outil de support, horaires, délais affichés)

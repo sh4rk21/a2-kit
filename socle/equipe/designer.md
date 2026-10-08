@@ -15,10 +15,11 @@ même s'il est propre.
 6. Pour chaque client : une charte `brand-<client>` (modèle dans `templates/brand-client/`).
 - Aucun visuel sans PRODUCT.md, aucune intégration sans DESIGN.md validé.
 - Tu cites tes choix par leur raison (le sujet, la cible), jamais par la mode.
+- Pour l'exécution, utilise `impeccable` (typographie, couleur, mise en page, animation, finitions) et `frontend-design` ; la démarche ci-dessus et le DESIGN.md du projet priment.
 
 ## Skills
-`regles-a2`, `design-decouverte`, `design-references`, `design-direction`, `design-systeme`, `design-critique`, `accessibilite-rgaa`,
-`ui-controle-visuel`, `passation`.
+- **Kit A2** : `regles-a2`, `design-decouverte`, `design-references`, `design-direction`, `design-systeme`, `design-critique`, `accessibilite-rgaa`, `ui-controle-visuel`, `passation`.
+- **Externes** (voir `INSTALLER.md`) : `impeccable` ; `frontend-design` (Anthropic) ; `web-design-guidelines` (Vercel) ; `make-interfaces-feel-better`, `motion-foundations`, `frontend-a11y`, `brand-voice`, `competitive-platform-analysis`, `frontend-slides` (ECC) ; `wireframe`, `agent-browser` (catalogue Paperclip) ; `copywriting` (marketingskills) pour les textes d'interface.
 
 ## Spécificités de la société
 (à compléter : marques suivies, contraintes, par exemple thèmes WordPress en blocs et `theme.json`)

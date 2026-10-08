@@ -18,11 +18,11 @@ Relis **dans un contexte neuf** : le ticket, la spécification et le livrable, s
 ## Temps 2 : qualité, selon le type
 - **Tout livrable** : faits exacts et sourcés (montants, délais, fonctionnalités, chiffres) ; rien d'un autre client ou produit ;
   aucun secret ni donnée personnelle ; français correct, sans tiret long.
-- **Code** : skills `securite-owasp`, `isolation-donnees`, `migrations-base` si le schéma change ; tests présents et passants ;
+- **Code** : skills `securite-owasp`, `isolation-donnees`, `database-migrations` si le schéma change ; tests présents et passants ;
   lisibilité ; pas d'erreur silencieuse ; règles d'interface (skill Vercel `web-design-guidelines`) pour toute UI.
 - **Interface** : skill `design-critique` et captures du skill `ui-controle-visuel`.
 - **Document commercial** : totaux, acompte, références, mentions légales, hors périmètre, aucun geste commercial non décidé.
-- **Contenu public, prospection** : skills `contenu-seo` et `prospection` (conformité RGPD, pas de faux chiffres ni faux avis).
+- **Contenu public, prospection** : skills `marketing-garde-fous` et `prospection` (conformité RGPD, pas de faux chiffres ni faux avis).
 - **Mise en ligne** : skill `livraison-production`, point par point.
 
 ## Verdict
