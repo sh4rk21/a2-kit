@@ -11,7 +11,7 @@ metadata:
 
 Pour chaque changement, vérifie :
 1. **Contrôle d'accès** : chaque route et chaque requête vérifie que l'utilisateur a le droit (côté serveur, jamais seulement dans l'interface).
-2. **Injections** : requêtes paramétrées ou ORM, jamais de concaténation SQL ; échappement des sorties HTML ; pas d'`eval`.
+2. **Injections** : requêtes paramétrées ou ORM, jamais de concaténation SQL ; échappement des sorties HTML ; jamais d'exécution dynamique de code ou de commande construite à partir d'une entrée utilisateur.
 3. **Validation des entrées** côté serveur (schéma Zod ou équivalent) : type, taille, format.
 4. **Authentification et sessions** : mots de passe hachés (bcrypt, argon2, scrypt), jetons à durée limitée, cookies `HttpOnly`,
    `Secure`, `SameSite`.
