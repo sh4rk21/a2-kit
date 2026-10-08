@@ -10,7 +10,12 @@ rafraîchissement de la source. En cas d'écart, les skills du kit (`regles-a2`,
 
 ## 1. Le kit
 `https://github.com/sh4rk21/a2-kit` : cocher `socle/skills`, plus `modules/prestations/skills` et/ou `modules/produits/skills` selon
-la société. Ne pas cocher `templates`.
+la société, et **`tiers/ecc` et `tiers/impeccable`**. Ne pas cocher `templates`.
+
+`tiers/` contient des copies de skills externes que Paperclip ne peut pas importer depuis leur repo d'origine : **ECC** (le repo
+dépasse la limite de 1 000 skills analysés ; 34 skills retenus) et **Impeccable** (fichier de plus d'1 Mo et moteur binaire ; copié
+sans son dossier `scripts/`, le détecteur passe par `npx impeccable@4.1.0`). Licences d'origine incluses. Mise à jour :
+`scripts/sync-tiers.sh <ref-ECC> <ref-Impeccable>` puis PR.
 
 ## 2. Sources externes (licences MIT ou Apache-2.0, toutes vérifiées contre le contrôle de sécurité de Paperclip)
 
@@ -18,11 +23,9 @@ la société. Ne pas cocher `templates`.
 |---|---|---|
 | Karpathy | `https://github.com/multica-ai/andrej-karpathy-skills` | `skills/karpathy-guidelines` |
 | superpowers | `https://github.com/obra/superpowers` | `skills/` : `test-driven-development`, `systematic-debugging`, `writing-plans`, `verification-before-completion`, `receiving-code-review` |
-| Impeccable | `https://github.com/pbakaus/impeccable` | **uniquement** `.claude/skills/impeccable` (les autres dossiers sont des copies du même skill) |
 | Anthropic | `https://github.com/anthropics/skills` | `skills/` : `frontend-design`, `webapp-testing` |
 | Vercel | `https://github.com/vercel-labs/agent-skills` | `skills/` : `web-design-guidelines`, `react-best-practices`, `composition-patterns` |
 | marketingskills | `https://github.com/coreyhaines31/marketingskills` | `skills/` : `product-marketing`, `customer-research`, `content-strategy`, `copywriting`, `copy-editing`, `seo-audit`, `ai-seo`, `schema`, `site-architecture`, `cro`, `signup`, `onboarding`, `emails`, `lead-magnets`, `social`, `ads`, `ad-creative`, `analytics`, `attribution`, `ab-testing`, `competitors`, `competitor-profiling`, `public-relations`, `community-marketing`, `marketing-plan`, `marketing-psychology`, `offers`, `pricing`, `paywalls`, `launch`, `directory-submissions`, `churn-prevention`, `prospecting`, `cold-email`, `sales-enablement`, `revops` |
-| ECC | `https://github.com/affaan-m/ECC` | **uniquement** dans `skills/` (pas `docs/`, `.agents/`, `.kiro/`, `.cursor/`, `pi/` : traductions et copies) : `database-migrations`, `postgres-patterns`, `prisma-patterns`, `api-design`, `backend-patterns`, `error-handling`, `coding-standards`, `git-workflow`, `docker-patterns`, `frontend-patterns`, `react-patterns`, `react-testing`, `nextjs-turbopack`, `e2e-testing`, `browser-qa`, `canary-watch`, `click-path-audit`, `benchmark`, `documentation-lookup`, `production-audit`, `codebase-onboarding`, `architecture-decision-records`, `intent-driven-development`, `council`, `product-lens`, `make-interfaces-feel-better`, `motion-foundations`, `motion-patterns`, `frontend-a11y`, `brand-voice`, `article-writing`, `market-research`, `competitive-platform-analysis`, `frontend-slides` |
 | WordPress (sociétés WordPress) | `https://github.com/WordPress/agent-skills` | les skills `wp-*` utiles (`wp-plugin-development`, `wp-block-development`, `wp-block-themes`, `wp-rest-api`, `wp-interactivity-api`, `wp-plugin-directory-guidelines`, `wp-performance`, `wp-phpstan`, `wp-env`, `wp-playground`, `wp-wpcli-and-ops`) |
 
 **Catalogue Paperclip** (« Skills » → « Discover ») : `task-planning`, `summarize-status`, `github-pr-workflow`, `qa-acceptance`,
