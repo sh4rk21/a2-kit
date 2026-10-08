@@ -6,7 +6,8 @@ Kit commun des équipes d'agents des sociétés A2 (Paperclip + Claude) : des **
 ## Organisation en 3 couches
 1. **Socle** (`socle/`) : pour toutes les sociétés. Direction, développement, relecture et qualité, design, commercial et marketing.
 2. **Modules** : [`modules/prestations/`](modules/prestations/README.md) (travail pour des clients : 17 skills, du premier contact
-   à la fin de mission, et les postes Chef de projet et Maintenance) et `modules/produits/` (à venir : SaaS, templates, plugins).
+   à la fin de mission, et les postes Chef de projet et Maintenance) et [`modules/produits/`](modules/produits/README.md) (SaaS, plugins, thèmes : 17 skills, de la découverte au support, et
+   les postes Responsable produit et Support).
 3. **Spécialités de chaque société** : dans son propre repo `<societe>-core/skills/`, plus des bibliothèques spécialisées
    (par exemple les skills officiels WordPress).
 
