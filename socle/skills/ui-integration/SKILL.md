@@ -9,7 +9,7 @@ metadata:
 
 # Intégration d'interface
 
-Outils associés : `impeccable` (craft), `frontend-design` (Anthropic), `web-design-guidelines` et `react-best-practices` (Vercel), `make-interfaces-feel-better`, `motion-foundations`, `frontend-a11y` (ECC).
+Outils associés : `impeccable` (craft), `frontend-design` (Anthropic), `web-design-guidelines` et `vercel-react-best-practices` (Vercel), `make-interfaces-feel-better`, `motion-foundations`, `frontend-a11y` (ECC).
 
 1. **Pas de DESIGN.md validé, pas d'interface** : demande-le (skill `design-systeme`).
 2. **Jetons d'abord** : exporte le DESIGN.md (`theme.css` pour Tailwind v4 `@theme` et variables shadcn ; `theme.json` pour
