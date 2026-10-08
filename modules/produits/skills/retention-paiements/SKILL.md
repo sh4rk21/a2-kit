@@ -9,6 +9,8 @@ metadata:
 
 # Rétention et paiements échoués
 
+Complète le skill `churn-prevention` (marketingskills) ; **ces règles priment** : annulation toujours simple (résiliation en quelques clics), au plus une offre clairement refusable.
+
 1. **Distinguer** l'attrition **volontaire** (le client part) de l'attrition **involontaire** (carte expirée, paiement refusé) :
    cette dernière représente souvent une part importante et se corrige mieux.
 2. **Paiements échoués** : nouvelles tentatives automatiques de la plateforme de paiement ; mise à jour automatique des cartes si

@@ -14,7 +14,7 @@ Complète `livraison-production` du socle ; le déploiement est validé par un h
 1. **Interrupteur de fonctionnalité** pour tout changement visible et risqué : livré éteint, allumé d'abord pour l'équipe, puis une
    partie des utilisateurs, puis tous. Retirer l'interrupteur quand la fonctionnalité est stable (dette notée).
 2. **Base de données** : migrations compatibles avec l'ancienne et la nouvelle version (étendre, migrer, puis contracter dans une version
-   ultérieure ; skill `migrations-base`). Jamais de suppression de colonne dans la même version que le code qui cesse de l'utiliser.
+   ultérieure ; skill `database-migrations`). Jamais de suppression de colonne dans la même version que le code qui cesse de l'utiliser.
 3. **Sauvegarde vérifiée** juste avant toute migration de données.
 4. **Retour arrière** écrit et possible en quelques minutes (version précédente de l'image, interrupteur éteint).
 5. **Après le déploiement** (30 minutes puis 24 heures) : erreurs, temps de réponse, inscriptions, paiements et parcours clés ;

@@ -9,6 +9,8 @@ metadata:
 
 # E-mails de prospection
 
+Complète le skill `cold-email` (marketingskills) pour la rédaction et la délivrabilité ; **ces règles priment** : aucune étape LinkedIn automatisée (HeyReach, lemlist…), envoi validé par Alex, information article 14.
+
 **Envoi** : jamais par Brevo ou un outil de newsletter (la prospection à froid y est interdite et met le compte en danger). Envoi
 depuis une boîte Google Workspace sur un **domaine secondaire** (ex. `getdigimedia.fr`), SPF + DKIM + DMARC en place, échauffement
 de 2 à 4 semaines, 20 à 50 envois par jour et par boîte. Taux de plainte sous 0,3 % (Gmail, Yahoo). Envoi validé par Alex.

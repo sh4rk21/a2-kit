@@ -9,11 +9,13 @@ metadata:
 
 # Prospection B2B conforme
 
+Complète le skill `prospecting` (marketingskills) pour la méthode ; **ces règles françaises priment** : pas d'outils d'enrichissement qui collectent des données sans base légale, jamais LinkedIn par automatisation ni Sales Navigator extrait.
+
 **Interdits absolus** : scraping ou automatisation de LinkedIn (connexions, messages, visites, extraction) ; achat de fichiers sans
 preuve de conformité ; adresses personnelles (gmail…) pour du B2B ; deviner des adresses en masse. La CNIL a sanctionné KASPR de
 240 000 € pour l'extraction de contacts LinkedIn.
 
-1. **Partir de l'ICP** (`marketing/cible.md`, skill `cible-et-personas`).
+1. **Partir de l'ICP** (`marketing/cible.md`, skill `customer-research`, `product-marketing`).
 2. **Sources autorisées** : sites des entreprises (page contact, mentions légales), annuaires professionnels publics, registres
    (annuaire des entreprises, data.gouv.fr), événements et salons, recommandations, inbound. Noter la **source** de chaque contact.
 3. **Qualification** : critères de l'ICP + un **signal d'achat** concret et daté par prospect ; sans signal, pas de contact.

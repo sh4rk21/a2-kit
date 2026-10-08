@@ -9,6 +9,8 @@ metadata:
 
 # LinkedIn du fondateur
 
+Complète le skill `social` (marketingskills) pour la méthode d'écriture ; **ces règles priment** : aucune publication ni planification automatique.
+
 **Règle** : on prépare, Alex publie lui-même. Aucun outil qui publie, commente, aime, se connecte ou envoie des messages à sa place
 (interdit par LinkedIn et risque de bannissement du compte).
 

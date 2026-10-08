@@ -1,44 +1,68 @@
 # Installer le kit dans une organisation Paperclip
 
-Libellés d'interface : Paperclip 2026.1005.0.
+Libellés d'interface : Paperclip 2026.1005.0. Chaque source s'ajoute par « Skills » → « Sources » → « Import from GitHub » →
+« ... or add public repo by URL » → URL → « Find skills » → cocher **uniquement** les dossiers indiqués → « Import N skills ».
+Les skills s'activent ensuite agent par agent (page de l'agent → onglet « Skills ») selon la section « Skills » de sa fiche.
 
-## 1. Skills du kit
-« Skills » (barre latérale) → « Sources » → importer depuis GitHub le repo `sh4rk21/a2-kit`, puis cocher les skills de `socle/skills/`
-(et plus tard du module utile : `modules/prestations/`, `modules/produits/`). Activer ensuite chaque skill sur les agents concernés :
-page de l'agent → onglet « Skills » → « Available from the library ». La liste par poste est dans chaque fiche de `socle/equipe/`.
+Les skills externes sont **importés depuis leur repo d'origine, jamais copiés ici** : ils se mettent à jour avec « Select skills » /
+rafraîchissement de la source. En cas d'écart, les skills du kit (`regles-a2`, `marketing-garde-fous`, `prospection`,
+`email-prospection`, `vente-en-ligne-conforme`…) **priment**.
 
-## 2. Fiches de poste
-Copier les fiches utiles de `socle/equipe/` dans `<societe>-core/equipe/`, remplacer `<societe>`, compléter « Spécificités de la
-société ». Le texte devient les instructions de l'agent (page de l'agent → « Instructions » → « Edit »).
+## 1. Le kit
+`https://github.com/sh4rk21/a2-kit` : cocher `socle/skills`, plus `modules/prestations/skills` et/ou `modules/produits/skills` selon
+la société. Ne pas cocher `templates`.
 
-## 3. Skills tiers (non copiés ici, à installer depuis leur source)
-| Pour | Skill(s) | Source |
+## 2. Sources externes (licences MIT ou Apache-2.0, toutes vérifiées contre le contrôle de sécurité de Paperclip)
+
+| Source | URL | Dossiers à cocher |
 |---|---|---|
-| Toutes | `task-planning`, `issue-triage`, `summarize-status`, `github-pr-workflow`, `qa-acceptance` | Catalogue Paperclip (« Skills » → « Discover ») |
-| Toutes (interface) | `web-design-guidelines` | `vercel-labs/agent-skills` |
-| Toutes (tests web) | `webapp-testing` | `anthropics/skills` |
-| Écriture de skills | `skill-creator` | `anthropics/skills` |
-| WordPress (ELDORADO, projets WordPress) | `wp-plugin-development`, `wp-block-development`, `wp-block-themes`, `wp-rest-api`, `wp-interactivity-api`, `wp-plugin-directory-guidelines`, `wp-performance`, `wp-phpstan`, `wp-env`, `wp-playground`, `wp-wpcli-and-ops`… | `WordPress/agent-skills` |
+| Karpathy | `https://github.com/multica-ai/andrej-karpathy-skills` | `skills/karpathy-guidelines` |
+| superpowers | `https://github.com/obra/superpowers` | `skills/` : `test-driven-development`, `systematic-debugging`, `writing-plans`, `verification-before-completion`, `receiving-code-review` |
+| Impeccable | `https://github.com/pbakaus/impeccable` | **uniquement** `.claude/skills/impeccable` (les autres dossiers sont des copies du même skill) |
+| Anthropic | `https://github.com/anthropics/skills` | `skills/` : `frontend-design`, `webapp-testing` |
+| Vercel | `https://github.com/vercel-labs/agent-skills` | `skills/` : `web-design-guidelines`, `react-best-practices`, `composition-patterns` |
+| marketingskills | `https://github.com/coreyhaines31/marketingskills` | `skills/` : `product-marketing`, `customer-research`, `content-strategy`, `copywriting`, `copy-editing`, `seo-audit`, `ai-seo`, `schema`, `site-architecture`, `cro`, `signup`, `onboarding`, `emails`, `lead-magnets`, `social`, `ads`, `ad-creative`, `analytics`, `attribution`, `ab-testing`, `competitors`, `competitor-profiling`, `public-relations`, `community-marketing`, `marketing-plan`, `marketing-psychology`, `offers`, `pricing`, `paywalls`, `launch`, `directory-submissions`, `churn-prevention`, `prospecting`, `cold-email`, `sales-enablement`, `revops` |
+| ECC | `https://github.com/affaan-m/ECC` | **uniquement** dans `skills/` (pas `docs/`, `.agents/`, `.kiro/`, `.cursor/`, `pi/` : traductions et copies) : `database-migrations`, `postgres-patterns`, `prisma-patterns`, `api-design`, `backend-patterns`, `error-handling`, `coding-standards`, `git-workflow`, `docker-patterns`, `frontend-patterns`, `react-patterns`, `react-testing`, `nextjs-turbopack`, `e2e-testing`, `browser-qa`, `canary-watch`, `click-path-audit`, `benchmark`, `documentation-lookup`, `production-audit`, `codebase-onboarding`, `architecture-decision-records`, `intent-driven-development`, `council`, `product-lens`, `make-interfaces-feel-better`, `motion-foundations`, `motion-patterns`, `frontend-a11y`, `brand-voice`, `article-writing`, `market-research`, `competitive-platform-analysis`, `frontend-slides` |
+| WordPress (sociétés WordPress) | `https://github.com/WordPress/agent-skills` | les skills `wp-*` utiles (`wp-plugin-development`, `wp-block-development`, `wp-block-themes`, `wp-rest-api`, `wp-interactivity-api`, `wp-plugin-directory-guidelines`, `wp-performance`, `wp-phpstan`, `wp-env`, `wp-playground`, `wp-wpcli-and-ops`) |
 
-## 4. Outils en ligne de commande (versions figées)
-Lancés par les agents dans le projet, sans installation globale :
+**Catalogue Paperclip** (« Skills » → « Discover ») : `task-planning`, `summarize-status`, `github-pr-workflow`, `qa-acceptance`,
+`wireframe`, `agent-browser`. **Ne pas installer** `design-critique` du catalogue : il porte le même nom que celui du kit.
+
+## 3. Écartés volontairement
+- ECC `lead-intelligence`, `connections-optimizer`, `social-graph-ranker` (pilotent LinkedIn : risque CNIL), `social-publisher`,
+  `crosspost`, `x-api` (publication sans validation humaine), `data-scraper-agent`.
+- ECC `security-review`, `tdd-workflow`, `deployment-patterns`, `santa-method` et Anthropic `skill-creator` : refusés par le contrôle
+  de sécurité de Paperclip (motifs d'exécution dynamique). Le kit couvre ces sujets (`securite-owasp`, superpowers, `livraison-production`).
+- marketingskills `programmatic-seo` (contenu en masse, risque « scaled content abuse »), `marketing-loops` (boucles autonomes),
+  `sms`, `video`, `image`, `aso` (hors besoin).
+- superpowers `brainstorming` (dialogue interactif : remplacé par `spec-avant-code`), `using-superpowers`.
+- UI UX Pro Max et `theme-factory` : catalogues de styles qui produisent un look générique.
+
+## 4. Fiches de poste
+Copier les fiches utiles de `socle/equipe/` et `modules/*/equipe/` dans `<societe>-core/equipe/`, remplacer `<societe>`, compléter
+« Spécificités de la société ». Le texte devient les instructions de l'agent (page de l'agent → « Instructions » → « Edit »).
+
+## 5. Outils en ligne de commande (versions figées)
 - `npx impeccable@4.1.0 detect --json <dossier ou url>` : détecteur de design générique. Ne pas lancer `npx impeccable install`.
 - `npx @google/design.md@0.4.0 lint DESIGN.md` (aussi `diff`, `export --format css-tailwind`).
 - `@axe-core/playwright@4.13.0` en dépendance de test du projet pour l'accessibilité.
 Monter de version uniquement par une PR sur ce fichier.
 
-## 5. Serveurs MCP
+## 6. Serveurs MCP
 « Connectors » → « Connect your own tool » → « Paste a config » (ou « Connect your own MCP server » pour une URL) :
 | MCP | Usage | Configuration |
 |---|---|---|
 | Chrome DevTools | captures, Lighthouse, console | `npx -y chrome-devtools-mcp@1.10.1 --headless --isolated` |
 | Playwright | captures, parcours, tests | `npx -y @playwright/mcp@0.0.83 --headless` |
 | shadcn | recherche et installation de composants | `npx -y shadcn@4.21.4 mcp` |
-| Refero (abonnement Pro) | références de produits réels | URL et jeton du compte Refero, en en-tête `Authorization` |
+| Refero (abonnement Pro) | références de produits réels (skill `design-references`) | URL et jeton du compte Refero, en en-tête `Authorization` |
+| Context7 | documentation à jour des bibliothèques (skill `documentation-lookup`) | serveur distant Context7 |
 | Mémoire A2 | contexte des projets | voir le guide Paperclip d'A2 OS |
 
-Les deux premiers ont besoin d'un navigateur Chromium dans l'environnement d'exécution des agents : le vérifier avant de les activer.
-Régler ensuite les actions de chaque connexion dans l'onglet « Permissions ».
+Chrome DevTools et Playwright ont besoin d'un navigateur Chromium dans l'environnement d'exécution des agents (réglage « Enable Chrome »
+de l'agent dans « Harness / Runtime ») : le vérifier avant de les activer. Régler ensuite les actions de chaque connexion dans
+l'onglet « Permissions ».
 
-## 6. Mise à jour
-Le kit évolue par PR sur ce repo. Les organisations resynchronisent leurs skills depuis « Skills » → « Sources ».
+## 7. Mise à jour
+Le kit évolue par PR sur ce repo. Les organisations resynchronisent leurs sources depuis « Skills » → « Sources » ; un skill retiré
+d'une source reste installé et doit être retiré de la bibliothèque à part.
