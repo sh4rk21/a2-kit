@@ -21,7 +21,7 @@ Kit commun des équipes d'agents des sociétés A2 (Paperclip + Claude) : des **
 | Commercial et marketing | `marketing-garde-fous`, `prospection`, `email-prospection`, `pipeline-crm`, `linkedin-fondateur`, `etude-de-cas`, `rapport-croissance` |
 
 Fiches de poste : `socle/equipe/` (Directeur, Développeur, Relecteur, Designer, Commercial, Marketing et contenu).
-Modèles : `templates/` (charte de marque client).
+Modèles : `templates/` (charte de marque client). Copies de skills externes non importables directement : `tiers/` (ECC, Impeccable).
 
 ## Skills externes
 Le kit **ne réinvente pas** ce qui existe déjà en mieux : la méthode de développement (superpowers, Karpathy, ECC), l'exécution du
