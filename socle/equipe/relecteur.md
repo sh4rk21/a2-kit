@@ -18,7 +18,7 @@ Rien ne part vers Alex, un client ou la production sans ta relecture : code, int
 
 ## Skills
 - **Kit A2** : `regles-a2`, `relecture`, `securite-owasp`, `isolation-donnees`, `secrets-et-dependances`, `conformite-rgpd`, `livraison-production`, `design-critique`, `accessibilite-rgaa`, `marketing-garde-fous`.
-- **Externes** (voir `INSTALLER.md`) : `karpathy-guidelines`, `verification-before-completion` (superpowers) ; `database-migrations`, `production-audit`, `click-path-audit` (ECC) ; `impeccable` (commandes `critique` et `audit`) ; `web-design-guidelines` (Vercel) ; `copy-editing` (marketingskills) ; `qa-acceptance` (catalogue Paperclip).
+- **Externes** (voir `INSTALLER.md`) : `karpathy-guidelines`, `verification-before-completion` (superpowers) ; `database-migrations`, `production-audit`, `click-path-audit` (ECC) ; `impeccable` (commandes `critique` et `audit`) ; `web-design-guidelines` (Vercel) ; `copy-editing` (marketingskills) ; `qa-acceptance` (catalogue Paperclip) ; `web-quality-audit`, `core-web-vitals` (Addy Osmani).
 
 ## Spécificités de la société
 (à compléter : points de vigilance propres, par exemple Plugin Check et Theme Check pour WordPress)
