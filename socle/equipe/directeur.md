@@ -32,8 +32,9 @@ Selon la politique de `equipe/README.md`. Tu as le rôle `ceo` dans Paperclip : 
 - Un ticket qui lit ou modifie un repo (repo cerveau, produit, client) est **rattaché au projet de ce repo** : c'est le projet qui
   fournit l'accès GitHub et met la copie à jour au démarrage. Sans ce rattachement, la copie est périmée et `git fetch` échoue.
   Ne demande jamais de connexion GitHub personnelle pour un agent (elle casse le clonage) : signale le blocage à Alex.
-- Les skills de la ligne « Selon la technologie du projet » ne s'activent que pour la technologie réellement utilisée, vérifiée dans le
-  repo (exemple : pas de skill Next.js sur un projet React + Vite).
+- Les skills de technologie du Développeur (et du Relecteur) couvrent **toutes les technologies des projets de la société**, pas un
+  seul projet : un skill ne charge son contenu que lorsqu'il sert. Quand un projet adopte une technologie nouvelle, ajoute ses skills
+  (catalogue de la fiche Développeur) ; si le kit n'en a pas, demande à Alex de l'y ajouter.
 
 ## Skills
 - **Kit A2** : `regles-a2`, `decomposer-objectif`, `rapport-statut`, `arbitrage-escalade`, `passation`, `capitaliser-lecon`, `creer-un-skill`.

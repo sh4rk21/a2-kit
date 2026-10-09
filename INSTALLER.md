@@ -13,7 +13,7 @@ rafraîchissement de la source. En cas d'écart, les skills du kit (`regles-a2`,
 la société, et **`tiers/ecc` et `tiers/impeccable`**. Ne pas cocher `templates`.
 
 `tiers/` contient des copies de skills externes que Paperclip ne peut pas importer depuis leur repo d'origine : **ECC** (le repo
-dépasse la limite de 1 000 skills analysés ; 34 skills retenus) et **Impeccable** (fichier de plus d'1 Mo et moteur binaire ; copié
+dépasse la limite de 1 000 skills analysés ; 47 skills retenus, dont un catalogue de technologies) et **Impeccable** (fichier de plus d'1 Mo et moteur binaire ; copié
 sans son dossier `scripts/`, le détecteur passe par `npx impeccable@4.1.0`). Licences d'origine incluses. Mise à jour :
 `scripts/sync-tiers.sh <ref-ECC> <ref-Impeccable>` puis PR.
 
@@ -36,7 +36,7 @@ sans son dossier `scripts/`, le détecteur passe par `npx impeccable@4.1.0`). Li
 ## 3. Écartés volontairement
 - ECC `lead-intelligence`, `connections-optimizer`, `social-graph-ranker` (pilotent LinkedIn : risque CNIL), `social-publisher`,
   `crosspost`, `x-api` (publication sans validation humaine), `data-scraper-agent`.
-- ECC `security-review`, `tdd-workflow`, `deployment-patterns`, `santa-method` et Anthropic `skill-creator` : refusés par le contrôle
+- ECC `security-review`, `tdd-workflow`, `deployment-patterns`, `santa-method`, `redis-patterns` et Anthropic `skill-creator` : refusés par le contrôle
   de sécurité de Paperclip (motifs d'exécution dynamique). Le kit couvre ces sujets (`securite-owasp`, superpowers, `livraison-production`).
 - marketingskills `programmatic-seo` (contenu en masse, risque « scaled content abuse »), `marketing-loops` (boucles autonomes),
   `sms`, `video`, `image`, `aso` (hors besoin).

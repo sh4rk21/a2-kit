@@ -8,7 +8,7 @@ d'œuvres tierces. Les licences d'origine sont reproduites dans `licenses/`.
 | `spec-avant-code` (adapté de `brainstorming`) | [obra/superpowers](https://github.com/obra/superpowers) | Jesse Vincent | MIT (`licenses/MIT-obra-superpowers.txt`) | Traduction, condensation, validations humaines interactives remplacées par les approbations et commentaires de tickets Paperclip |
 | `design-direction`, `design-critique`, `design-systeme` (liste des tics de design générique, processus plan → revue → construction → critique) | [anthropics/skills, `frontend-design`](https://github.com/anthropics/skills/tree/main/skills/frontend-design) | Anthropic | Apache-2.0 (`licenses/APACHE-2.0-anthropic-frontend-design.txt`) | Traduction, fusion avec des règles maison, ajout RGAA, DESIGN.md au format Google, contrôles automatiques |
 
-| `tiers/ecc/*` (34 skills, copies non modifiées) | [affaan-m/ECC](https://github.com/affaan-m/ECC) | Affaan Mustafa | MIT (`tiers/ecc/LICENSE`) | Aucune ; sélection de dossiers |
+| `tiers/ecc/*` (47 skills, copies non modifiées) | [affaan-m/ECC](https://github.com/affaan-m/ECC) | Affaan Mustafa | MIT (`tiers/ecc/LICENSE`) | Aucune ; sélection de dossiers |
 | `tiers/impeccable/impeccable` | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Paul Bakaus | Apache-2.0 (`tiers/impeccable/LICENSE`, `tiers/impeccable/NOTICE.md`) | Dossier `scripts/` retiré ; note « Version A2 (modifiée) » ajoutée en tête de SKILL.md |
 
 Ressources **non copiées**, importées directement depuis leur dépôt d'origine (voir `INSTALLER.md`) : obra/superpowers,
