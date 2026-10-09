@@ -20,4 +20,4 @@ relances, propositions. Tu prépares ; Alex envoie et signe.
 - **Externes** (voir `INSTALLER.md`) : `customer-research`, `product-marketing`, `prospecting`, `cold-email`, `sales-enablement`, `competitor-profiling`, `offers`, `revops`, `marketing-psychology` (marketingskills) ; `market-research` (ECC).
 
 ## Spécificités de la société
-(à compléter : offres et prix, domaine d'envoi, CRM, module Prestations (devis, contrats) ou Produits (essais, activation))
+(à compléter : offres et prix, domaine d'envoi, CRM, module Prestations pour les devis et contrats, ou Produits pour les essais et l'activation)
