@@ -14,7 +14,7 @@ Kit commun des équipes d'agents des sociétés A2 (Paperclip + Claude) : des **
 ## Contenu du socle
 | Famille | Skills |
 |---|---|
-| Direction | `regles-a2`, `decomposer-objectif`, `rapport-statut`, `passation`, `capitaliser-lecon`, `arbitrage-escalade` |
+| Direction | `regles-a2`, `decomposer-objectif`, `rapport-statut`, `passation`, `capitaliser-lecon`, `arbitrage-escalade`, `creer-un-skill` |
 | Développement | `spec-avant-code`, `petites-pr`, `secrets-et-dependances` |
 | Relecture et qualité | `relecture`, `securite-owasp`, `isolation-donnees`, `livraison-production`, `conformite-rgpd` |
 | Design | `design-decouverte`, `design-references`, `design-direction`, `design-systeme`, `design-critique`, `ui-integration`, `ui-controle-visuel`, `accessibilite-rgaa` |
