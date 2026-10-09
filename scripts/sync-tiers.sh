@@ -10,7 +10,9 @@ ECC_SKILLS=(database-migrations postgres-patterns prisma-patterns api-design bac
   git-workflow docker-patterns frontend-patterns react-patterns react-testing nextjs-turbopack e2e-testing browser-qa canary-watch
   click-path-audit benchmark documentation-lookup production-audit codebase-onboarding architecture-decision-records
   intent-driven-development council product-lens make-interfaces-feel-better motion-foundations motion-patterns frontend-a11y
-  brand-voice article-writing market-research competitive-platform-analysis frontend-slides)
+  brand-voice article-writing market-research competitive-platform-analysis frontend-slides
+  vite-patterns mysql-patterns python-patterns python-testing fastapi-patterns django-patterns vue-patterns nuxt4-patterns
+  nestjs-patterns laravel-patterns laravel-security laravel-tdd react-native-patterns)
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
