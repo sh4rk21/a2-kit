@@ -1,7 +1,9 @@
 # Installer le kit dans une organisation Paperclip
 
-Libellés d'interface : Paperclip 2026.1005.0. Chaque source s'ajoute par « Skills » → « Sources » → « Import from GitHub » →
-« ... or add public repo by URL » → URL → « Find skills » → cocher **uniquement** les dossiers indiqués → « Import N skills ».
+Pour la mise en place complète d'une organisation (ordre des étapes, rôles, contrôles finaux, pièges) : [RECETTE-ORGANISATION.md](RECETTE-ORGANISATION.md).
+
+Libellés d'interface : Paperclip 2026.1005.0. Chaque source publique s'ajoute par « Skills » → « Sources » → « Import from GitHub » →
+**« ... or add public repo by URL »** (jamais via la liste de la connexion GitHub, sinon un agent ne peut plus la rafraîchir) → URL → « Find skills » → cocher **uniquement** les dossiers indiqués → « Import N skills ».
 Les skills s'activent ensuite agent par agent (page de l'agent → onglet « Skills ») selon la section « Skills » de sa fiche.
 
 Les skills externes sont **importés depuis leur repo d'origine, jamais copiés ici** : ils se mettent à jour avec « Select skills » /
