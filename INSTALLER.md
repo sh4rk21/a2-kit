@@ -25,6 +25,8 @@ sans son dossier `scripts/`, le détecteur passe par `npx impeccable@4.1.0`). Li
 | superpowers | `https://github.com/obra/superpowers` | `skills/` : `test-driven-development`, `systematic-debugging`, `writing-plans`, `verification-before-completion`, `receiving-code-review` |
 | Anthropic | `https://github.com/anthropics/skills` | `skills/` : `frontend-design`, `webapp-testing` |
 | Vercel | `https://github.com/vercel-labs/agent-skills` | `skills/` : `web-design-guidelines`, `react-best-practices`, `composition-patterns` |
+| taste-skill | `https://github.com/Leonxlnx/taste-skill` | `skills/taste-skill` (nommé `design-taste-frontend`), `skills/redesign-skill` (nommé `redesign-existing-projects`) |
+| Web quality (Addy Osmani) | `https://github.com/addyosmani/web-quality-skills` | `skills/performance`, `skills/core-web-vitals`, `skills/web-quality-audit` |
 | marketingskills | `https://github.com/coreyhaines31/marketingskills` | `skills/` : `product-marketing`, `customer-research`, `content-strategy`, `copywriting`, `copy-editing`, `seo-audit`, `ai-seo`, `schema`, `site-architecture`, `cro`, `signup`, `onboarding`, `emails`, `lead-magnets`, `social`, `ads`, `ad-creative`, `analytics`, `attribution`, `ab-testing`, `competitors`, `competitor-profiling`, `public-relations`, `community-marketing`, `marketing-plan`, `marketing-psychology`, `offers`, `pricing`, `paywalls`, `launch`, `directory-submissions`, `churn-prevention`, `prospecting`, `cold-email`, `sales-enablement`, `revops` |
 | WordPress (sociétés WordPress) | `https://github.com/WordPress/agent-skills` | les skills `wp-*` utiles (`wp-plugin-development`, `wp-block-development`, `wp-block-themes`, `wp-rest-api`, `wp-interactivity-api`, `wp-plugin-directory-guidelines`, `wp-performance`, `wp-phpstan`, `wp-env`, `wp-playground`, `wp-wpcli-and-ops`) |
 
@@ -40,6 +42,9 @@ sans son dossier `scripts/`, le détecteur passe par `npx impeccable@4.1.0`). Li
   `sms`, `video`, `image`, `aso` (hors besoin).
 - superpowers `brainstorming` (dialogue interactif : remplacé par `spec-avant-code`), `using-superpowers`.
 - UI UX Pro Max et `theme-factory` : catalogues de styles qui produisent un look générique.
+- taste-skill `soft-skill`, `minimalist-skill`, `brutalist-skill`, `gpt-tasteskill` (styles imposés), `imagegen-*`, `image-to-code-skill`,
+  `brandkit` (génération d'images), Addy Osmani `best-practices` (refusé par le contrôle de sécurité de Paperclip).
+- MCP non officiels qui aspirent Mobbin, Dribbble, Behance ou Refero ; Mobbin et Nicely Done (payants) tant que Refero n'est pas pris.
 
 ## 4. Fiches de poste
 Copier les fiches utiles de `socle/equipe/` et `modules/*/equipe/` dans `<societe>-core/equipe/`, remplacer `<societe>`, compléter
@@ -49,6 +54,7 @@ Copier les fiches utiles de `socle/equipe/` et `modules/*/equipe/` dans `<societ
 - `npx impeccable@4.1.0 detect --json <dossier ou url>` : détecteur de design générique. Ne pas lancer `npx impeccable install`.
 - `npx @google/design.md@0.4.0 lint DESIGN.md` (aussi `diff`, `export --format css-tailwind`).
 - `@axe-core/playwright@4.13.0` en dépendance de test du projet pour l'accessibilité.
+- `npx dembrandt@0.38.0 <url>` : extraction des jetons de design d'un site (site actuel du client avant une refonte).
 Monter de version uniquement par une PR sur ce fichier.
 
 ## 6. Serveurs MCP
@@ -58,7 +64,8 @@ Monter de version uniquement par une PR sur ce fichier.
 | Chrome DevTools | captures, Lighthouse, console | `npx -y chrome-devtools-mcp@1.10.1 --headless --isolated` |
 | Playwright | captures, parcours, tests | `npx -y @playwright/mcp@0.0.83 --headless` |
 | shadcn | recherche et installation de composants | `npx -y shadcn@4.21.4 mcp` |
-| Refero (abonnement Pro) | références de produits réels (skill `design-references`) | URL et jeton du compte Refero, en en-tête `Authorization` |
+| Inspo (gratuit) | 832 sites réels, DESIGN.md par site (skill `design-references`) | URL `https://inspomcp.dev/api/mcp`, sans authentification |
+| Refero (abonnement Pro, optionnel) | écrans et parcours de produits réels (skill `design-references`) | URL `https://api.refero.design/mcp`, connexion OAuth (« Sign in ») |
 | Context7 | documentation à jour des bibliothèques (skill `documentation-lookup`) | serveur distant Context7 |
 | Mémoire A2 | contexte des projets | voir le guide Paperclip d'A2 OS |
 

@@ -17,6 +17,8 @@ Adapté de `frontend-design` (Anthropic, Apache-2.0) et des règles maison A2.
 - Numérotation 01 / 02 / 03 alors que le contenu n'est pas une suite.
 
 ## Typographie et texte
+- Les polices « favorites » des skills de design (Geist, Satoshi, Cabinet Grotesk, Inter…) reprises par réflexe : chaque police se
+  justifie par le sujet et la cible du projet.
 - Inter ou Roboto par défaut, sans décision typographique.
 - Un seul mot du titre mis en couleur, en italique ou en gras.
 - Petites étiquettes en MAJUSCULES espacées au-dessus de chaque titre.
