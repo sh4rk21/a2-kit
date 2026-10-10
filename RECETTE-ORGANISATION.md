@@ -80,8 +80,9 @@ Et pour l'organisation :
 ## Ensuite : vivre avec l'organisation
 - **Un skill change** (kit, repo cerveau ou source externe) : PR → relecture → fusion par Alex → rafraîchissement de la source
   (par le Directeur pour les sources publiques, par Alex pour le repo cerveau). Les agents qui ont le skill reçoivent la nouvelle version.
-- **Un nouveau skill** : skill `creer-un-skill` (besoin réel, demandes de test, PR), puis le Directeur le coche dans la source et
-  l'active sur les agents concernés, et met à jour leurs fiches par PR.
+- **Un nouveau skill** : skill `creer-un-skill`. D'abord chercher s'il en existe un de qualité (bibliothèque, kit, `npx skills find`) et
+  le proposer par PR ; sinon le créer (besoin réel, demandes de test, PR). Le Directeur le coche ensuite dans la source, l'active sur les
+  agents concernés et met à jour leurs fiches par PR. **Aucun agent n'installe de skill lui-même** (`npx skills add`).
 - **Une nouvelle technologie** dans un projet : le Directeur ajoute ses skills (catalogue de la fiche Développeur) ; s'il n'y en a
   pas dans le kit, il le signale à Alex.
 - **Toute modification d'agent** part d'un ticket validé par Alex ; l'historique est dans l'onglet « Revisions » de l'agent.
@@ -95,4 +96,5 @@ Et pour l'organisation :
 | Le Directeur ne peut pas modifier un agent | rôle autre que `ceo` | Base : rôle `ceo` puis redémarrage de Paperclip |
 | Instructions dans un bloc de code, premières lignes perdues | collage dans l'éditeur | écrire par l'API |
 | Skill « Invalid » à l'import | motif d'exécution dynamique dans le texte, ou fichier de plus d'1 Mo | ne pas l'importer, ou copie nettoyée dans `tiers/` (Base) |
+| Skill présent sur le serveur mais absent de la bibliothèque | installé par `npx skills add -g` (skill `find-skills` par exemple) | ne jamais installer soi-même ; proposer la source par PR |
 | Erreur 422 « INSTRUCTION_BASE_REQUIRED » | écriture d'instructions sans `baseRevisionId`/`baseHash` | lire le fichier juste avant et les fournir |
