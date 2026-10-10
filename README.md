@@ -38,7 +38,8 @@ AI Act, accessibilité), le cycle d'agence et la vente de produits (WordPress.or
 - **Conformité française et européenne** : RGPD, CNIL (prospection), RGAA et European Accessibility Act, AI Act.
 
 ## Installation
-Voir [INSTALLER.md](INSTALLER.md).
+Mise en place complète d'une organisation, étape par étape : [RECETTE-ORGANISATION.md](RECETTE-ORGANISATION.md).
+Détail des sources de skills, outils et MCP : [INSTALLER.md](INSTALLER.md).
 
 ## Licence
 MIT (voir [LICENSE](LICENSE)). Certains skills sont adaptés d'œuvres tierces : voir [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
