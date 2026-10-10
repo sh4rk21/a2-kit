@@ -73,8 +73,9 @@ Monter de version uniquement par une PR sur ce fichier.
 | Context7 | documentation à jour des bibliothèques (skill `documentation-lookup`) | serveur distant Context7 |
 | Mémoire A2 | contexte des projets | voir le guide Paperclip d'A2 OS |
 
-Chrome DevTools et Playwright ont besoin d'un navigateur Chromium dans l'environnement d'exécution des agents (réglage « Enable Chrome »
-de l'agent dans « Harness / Runtime ») : le vérifier avant de les activer. Régler ensuite les actions de chaque connexion dans
+**Navigateur des agents** : sur notre instance (mode authentifié et public), Paperclip refuse les serveurs MCP locaux et les adresses
+internes ; les MCP Chrome DevTools et Playwright ne sont donc pas branchés. Chromium, Playwright et Lighthouse sont installés dans
+l'image Paperclip d'A2 OS (`a2-os-platform/infra/paperclip/Dockerfile`) et s'utilisent en ligne de commande (skill `ui-controle-visuel`). Régler ensuite les actions de chaque connexion dans
 l'onglet « Permissions ».
 
 ## 7. Mise à jour
