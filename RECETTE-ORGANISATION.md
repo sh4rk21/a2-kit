@@ -9,8 +9,9 @@ Trois acteurs, chacun dans son rôle :
 - **Directeur** : tout le reste, par tickets, dont la configuration de son équipe.
 
 ## Étape 1 · Socle technique (Base)
-1. Organisation GitHub de la société (`<SOCIETE>-DEV`) et repo cerveau privé `<societe>-core` à la structure standard
-   (`CLAUDE.md`, `societe/`, `charte/`, `equipe/`, `skills/`, `memoire/`, `clients/` ou `produits/`, `templates/`).
+1. Organisation GitHub de la société (`<SOCIETE>-DEV`) et repo cerveau privé `<societe>-core`, créé **à partir du modèle
+   `templates/societe-core/` du kit** (copier tout le dossier, remplacer `<societe>`/`<SOCIETE>`, compléter `CLAUDE.md`, `societe/`,
+   l'organigramme ; garder `clients/` pour une société de prestation, `produits/` pour une société de produits, ou les deux).
 2. A2 OS : société déclarée dans le registre (`repo:` du repo cerveau) et jeton `paperclip-<societe>` limité à la société, avec les
    droits `memory:read` et `memory:write` (les notes des agents arrivent dans « À valider », jamais directement en mémoire).
 
@@ -35,7 +36,7 @@ Trois acteurs, chacun dans son rôle :
    - « Env » : `GITHUB_TOKEN` et `GH_TOKEN` en **« Organization secret »** (icône « T ⌄ »), jamais en texte ;
    - « Execution Workspaces » : copie isolée par tâche (réglage par défaut de l'instance).
 6. « Skills » → « Sources » → « Import from GitHub » : **seulement le repo cerveau privé** (`<societe>-core`), via la connexion
-   GitHub. Rafraîchir cette source reste un geste d'Alex (« ⋮ » → « Refresh ») : un agent ne peut pas lire un repo privé par là.
+   GitHub, en **excluant les dossiers `clients` et `templates`** (aucun fichier d'un client ne doit remonter dans la bibliothèque). Rafraîchir cette source reste un geste d'Alex (« ⋮ » → « Refresh ») : un agent ne peut pas lire un repo privé par là.
 
 ## Étape 3 · Directeur (Alex, puis Base si besoin)
 1. Réglages : modèle Opus 5.5 (`claude-opus-5-5`), « Max concurrent runs » 1, réveil automatique désactivé, « Wake on demand » activé, « Max turns per
@@ -72,6 +73,8 @@ Le Directeur rend un compte rendu avec le **hash du commit** du repo cerveau uti
 - [ ] rattachement hiérarchique conforme à `equipe/organigramme.md`, organigramme à jour (statuts « en poste »).
 
 Et pour l'organisation :
+- [ ] repo cerveau conforme au modèle `templates/societe-core/` (mêmes dossiers et fichiers de base, `.gitignore` compris) ;
+- [ ] chaque dossier `clients/<client>/` ou `produits/<produit>/` correspond à un identifiant du registre A2 ;
 - [ ] connexion GitHub attribuée à aucun agent ; mémoire A2 OS à toute l'équipe ; Inspo (et Refero) au Designer et au Développeur ;
 - [ ] chaque projet pointe vers le bon repo de l'organisation GitHub de la société, avec `GITHUB_TOKEN`/`GH_TOKEN` en secret ;
 - [ ] sources de skills : repo cerveau via la connexion, toutes les autres par URL ; aucune source inutile ; bibliothèque sans doublon ;
