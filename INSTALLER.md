@@ -43,6 +43,8 @@ sans son dossier `scripts/`, le détecteur passe par `npx impeccable@4.1.0`). Li
 - marketingskills `programmatic-seo` (contenu en masse, risque « scaled content abuse »), `marketing-loops` (boucles autonomes),
   `sms`, `video`, `image`, `aso` (hors besoin).
 - superpowers `brainstorming` (dialogue interactif : remplacé par `spec-avant-code`), `using-superpowers`.
+- Vercel `find-skills` : il installe des skills sur tout le serveur sans confirmation (`npx skills add -g -y`), hors bibliothèque et
+  hors relecture. Sa méthode de recherche est reprise dans `creer-un-skill` (recherche seulement, proposition par PR).
 - UI UX Pro Max et `theme-factory` : catalogues de styles qui produisent un look générique.
 - taste-skill `soft-skill`, `minimalist-skill`, `brutalist-skill`, `gpt-tasteskill` (styles imposés), `imagegen-*`, `image-to-code-skill`,
   `brandkit` (génération d'images), Addy Osmani `best-practices` (refusé par le contrôle de sécurité de Paperclip).
