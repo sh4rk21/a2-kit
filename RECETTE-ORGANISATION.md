@@ -38,7 +38,7 @@ Trois acteurs, chacun dans son rôle :
    GitHub. Rafraîchir cette source reste un geste d'Alex (« ⋮ » → « Refresh ») : un agent ne peut pas lire un repo privé par là.
 
 ## Étape 3 · Directeur (Alex, puis Base si besoin)
-1. Réglages : modèle Opus, « Max concurrent runs » 1, réveil automatique désactivé, « Wake on demand » activé, « Max turns per
+1. Réglages : modèle Opus 5.5 (`claude-opus-5-5`), « Max concurrent runs » 1, réveil automatique désactivé, « Wake on demand » activé, « Max turns per
    run » 300, variable `CLAUDE_CODE_OAUTH_TOKEN` en « Organization secret ».
 2. **Rôle `ceo` obligatoire** (visible dans « Overview » → « Role »). C'est ce rôle qui donne au Directeur le droit de configurer son
    équipe et de créer des skills. S'il a un autre rôle, il ne pourra rien configurer : demander à la Base de le corriger (l'interface
@@ -68,7 +68,7 @@ Trois acteurs, chacun dans son rôle :
 Le Directeur rend un compte rendu avec le **hash du commit** du repo cerveau utilisé comme référence, et pour chaque agent :
 - [ ] instructions identiques à la fiche, caractère par caractère ;
 - [ ] skills : aucun manquant, aucun hors fiche (hors skills de plateforme), aucun introuvable dans la bibliothèque ;
-- [ ] modèle, 1 exécution à la fois, réveil automatique désactivé, 300 tours, secret Claude de la société ;
+- [ ] modèle de la fiche (Opus 5.5 ou Sonnet 5), 1 exécution à la fois, réveil automatique désactivé, 300 tours, secret Claude de la société ;
 - [ ] rattachement hiérarchique conforme à `equipe/organigramme.md`, organigramme à jour (statuts « en poste »).
 
 Et pour l'organisation :
