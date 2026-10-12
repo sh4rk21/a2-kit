@@ -36,7 +36,9 @@ Trois acteurs, chacun dans son rôle :
    - « Env » : `GITHUB_TOKEN` et `GH_TOKEN` en **« Organization secret »** (icône « T ⌄ »), jamais en texte ;
    - « Execution Workspaces » : copie isolée par tâche (réglage par défaut de l'instance).
 6. « Skills » → « Sources » → « Import from GitHub » : **seulement le repo cerveau privé** (`<societe>-core`), via la connexion
-   GitHub, en **excluant les dossiers `clients` et `templates`** (aucun fichier d'un client ne doit remonter dans la bibliothèque). Rafraîchir cette source reste un geste d'Alex (« ⋮ » → « Refresh ») : un agent ne peut pas lire un repo privé par là.
+   GitHub, en **excluant les dossiers `clients` et `templates`** (aucun fichier d'un client ne doit remonter dans la bibliothèque).
+   Tant que `skills/` ne contient aucun skill (cas d'une société neuve), Paperclip n'a rien à importer (« 0 of 0 selected ») :
+   ajouter cette source au premier skill propre à la société, après sa fusion. Rafraîchir cette source reste un geste d'Alex (« ⋮ » → « Refresh ») : un agent ne peut pas lire un repo privé par là.
 
 ## Étape 3 · Directeur (Alex, puis Base si besoin)
 1. Réglages : modèle Opus 5.5 (`claude-opus-5-5`), « Max concurrent runs » 1, réveil automatique désactivé, « Wake on demand » activé, « Max turns per
