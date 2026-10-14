@@ -19,7 +19,8 @@ Trois acteurs, chacun dans son rôle :
 1. Créer l'organisation. Le premier agent est le **Directeur**.
 2. Menu du compte → « Settings » → « General » :
    - « Hiring » : activer **« Require board approval for new hires »** ;
-   - « Interaction governance » : « Cap » sur **« Human only »** pour les décisions.
+   - « Interaction governance » : « Cap » sur **« Human only »** pour les cinq types, **y compris les questions** (« Ask user
+     questions ») : sinon un autre agent peut répondre à une question posée à Alex (un prix, une décision).
 3. « Settings » → « Secrets » → « New secret » (« Organization », « Managed value ») :
    - `CLAUDE_CODE_OAUTH_TOKEN` : le jeton Claude **du compte de la société** (jamais celui d'Alex), généré par `claude setup-token` ;
    - `GITHUB_TOKEN` : jeton GitHub fine-grained, « Resource owner » = l'organisation GitHub de la société, « All repositories »,
