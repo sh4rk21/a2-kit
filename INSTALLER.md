@@ -12,12 +12,16 @@ rafraîchissement de la source. En cas d'écart, les skills du kit (`regles-a2`,
 
 ## 1. Le kit
 `https://github.com/sh4rk21/a2-kit` : cocher `socle/skills`, plus `modules/prestations/skills` et/ou `modules/produits/skills` selon
-la société, et **`tiers/ecc` et `tiers/impeccable`**. Ne pas cocher `templates`.
+la société, et **`tiers/ecc`, `tiers/impeccable` et `tiers/taste`**, plus **`tiers/wordpress`** pour une société WordPress. Ne pas
+cocher `templates`.
 
 `tiers/` contient des copies de skills externes que Paperclip ne peut pas importer depuis leur repo d'origine : **ECC** (le repo
 dépasse la limite de 1 000 skills analysés ; 47 skills retenus, dont un catalogue de technologies) et **Impeccable** (fichier de plus d'1 Mo et moteur binaire ; copié
-sans son dossier `scripts/`, le détecteur passe par `npx impeccable@4.1.0`). Licences d'origine incluses. Mise à jour :
-`scripts/sync-tiers.sh <ref-ECC> <ref-Impeccable>` puis PR.
+sans son dossier `scripts/`, le détecteur passe par `npx impeccable@4.1.0`), **taste-skill** `design-taste-frontend` (ses scripts
+et son dossier `evals/` contiennent le mot réservé de l'exécution dynamique : méthode renommée, `evals/` retiré) et **WordPress**
+`wp-performance`, `wp-plugin-directory-guidelines` (mentions de l'exécution dynamique reformulées). Licences d'origine incluses.
+Mise à jour :
+`scripts/sync-tiers.sh <ref-ECC> <ref-Impeccable> <ref-taste> <ref-WordPress>` puis PR.
 
 ## 2. Sources externes (licences MIT ou Apache-2.0, toutes vérifiées contre le contrôle de sécurité de Paperclip)
 
@@ -27,10 +31,10 @@ sans son dossier `scripts/`, le détecteur passe par `npx impeccable@4.1.0`). Li
 | superpowers | `https://github.com/obra/superpowers` | `skills/` : `test-driven-development`, `systematic-debugging`, `writing-plans`, `verification-before-completion`, `receiving-code-review` |
 | Anthropic | `https://github.com/anthropics/skills` | `skills/` : `frontend-design`, `webapp-testing` |
 | Vercel | `https://github.com/vercel-labs/agent-skills` | `skills/` : `web-design-guidelines`, `react-best-practices`, `composition-patterns` |
-| taste-skill | `https://github.com/Leonxlnx/taste-skill` | `skills/taste-skill` (nommé `design-taste-frontend`), `skills/redesign-skill` (nommé `redesign-existing-projects`) |
+| taste-skill | `https://github.com/Leonxlnx/taste-skill` | `skills/redesign-skill` (nommé `redesign-existing-projects`) seulement ; `design-taste-frontend` vient de `tiers/taste` |
 | Web quality (Addy Osmani) | `https://github.com/addyosmani/web-quality-skills` | `skills/performance`, `skills/core-web-vitals`, `skills/web-quality-audit` |
 | marketingskills | `https://github.com/coreyhaines31/marketingskills` | `skills/` : `product-marketing`, `customer-research`, `content-strategy`, `copywriting`, `copy-editing`, `seo-audit`, `ai-seo`, `schema`, `site-architecture`, `cro`, `signup`, `onboarding`, `emails`, `lead-magnets`, `social`, `ads`, `ad-creative`, `analytics`, `attribution`, `ab-testing`, `competitors`, `competitor-profiling`, `public-relations`, `community-marketing`, `marketing-plan`, `marketing-psychology`, `offers`, `pricing`, `paywalls`, `launch`, `directory-submissions`, `churn-prevention`, `prospecting`, `cold-email`, `sales-enablement`, `revops` |
-| WordPress (sociétés WordPress) | `https://github.com/WordPress/agent-skills` | les skills `wp-*` utiles (`wp-plugin-development`, `wp-block-development`, `wp-block-themes`, `wp-rest-api`, `wp-interactivity-api`, `wp-plugin-directory-guidelines`, `wp-performance`, `wp-phpstan`, `wp-env`, `wp-playground`, `wp-wpcli-and-ops`) |
+| WordPress (sociétés WordPress) | `https://github.com/WordPress/agent-skills` | les skills `wp-*` utiles (`wp-plugin-development`, `wp-block-development`, `wp-block-themes`, `wp-rest-api`, `wp-interactivity-api`, `wp-phpstan`, `wp-env`, `wp-playground`, `wp-wpcli-and-ops`) ; `wp-plugin-directory-guidelines` et `wp-performance` viennent de `tiers/wordpress` |
 
 **Catalogue Paperclip** (« Skills » → « Discover ») : `task-planning`, `summarize-status`, `github-pr-workflow`, `qa-acceptance`,
 `wireframe`, `agent-browser`. **Ne pas installer** `design-critique` du catalogue : il porte le même nom que celui du kit.
@@ -81,3 +85,8 @@ l'onglet « Permissions ».
 ## 7. Mise à jour
 Le kit évolue par PR sur ce repo. Les organisations resynchronisent leurs sources depuis « Skills » → « Sources » ; un skill retiré
 d'une source reste installé et doit être retiré de la bibliothèque à part.
+
+**Organisations installées avant le 2026-10-14** (FLOW, DIGIMEDIA, A2WORK) : leur `design-taste-frontend` vient de la source
+taste-skill, dont la version actuelle est refusée par Paperclip. Au prochain rafraîchissement de cette source, le Directeur coche
+`tiers/taste` dans la source du kit, réactive `design-taste-frontend` (nouvelle clé) sur les agents concernés, puis décoche
+`skills/taste-skill` dans la source taste-skill.

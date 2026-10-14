@@ -58,7 +58,8 @@ Trois acteurs, chacun dans son rôle :
 2. **Sources de skills publiques** (kit `sh4rk21/a2-kit` et sources externes d'`INSTALLER.md`) : les ajouter **par « ... or add
    public repo by URL »**, jamais en choisissant le repo dans la liste de la connexion GitHub. Une source publique liée à la
    connexion devient impossible à rafraîchir par un agent. Cocher **uniquement** les dossiers d'`INSTALLER.md` (pour le kit :
-   `socle/skills`, le ou les modules utiles, `tiers/ecc`, `tiers/impeccable`).
+   `socle/skills`, le ou les modules utiles, `tiers/ecc`, `tiers/impeccable`, `tiers/taste`, et `tiers/wordpress` pour une société
+   WordPress).
 3. **Embauches** : une demande par poste, à partir de la fiche, avec dans la demande les **instructions** (contenu exact de la fiche)
    et les **skills** (section « Skills », plus les technologies de tous les projets), les réglages de l'étape 3.1 et une justification
    en 3 lignes. Alex approuve chaque embauche (« Approvals »).
