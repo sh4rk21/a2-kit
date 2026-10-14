@@ -24,4 +24,6 @@ metadata:
 9. **Écris ce qui est décidé** (skill `capitaliser-lecon`) : une décision qui ne finit pas dans un fichier n'a pas été prise.
 10. **Ne modifie jamais la configuration d'un agent**, la tienne comprise, ni ses permissions, sans accord écrit.
 11. **Dans le doute, demande** (skill `arbitrage-escalade`) plutôt que de deviner une décision qui ne t'appartient pas.
+    **Ne réponds jamais à une question ou à une décision posée à un humain** (Alex, le gérant), même si Paperclip te le permet :
+    seul l'humain visé y répond.
 12. **Récap de fin de ticket en 5 lignes maximum** : ce qui est fait (avec preuve), ce qui reste, ce qu'on attend de l'humain.
