@@ -19,7 +19,8 @@ Trois acteurs, chacun dans son rôle :
 1. Créer l'organisation. Le premier agent est le **Directeur**.
 2. Menu du compte → « Settings » → « General » :
    - « Hiring » : activer **« Require board approval for new hires »** ;
-   - « Interaction governance » : « Cap » sur **« Human only »** pour les décisions.
+   - « Interaction governance » : « Cap » sur **« Human only »** pour les cinq types, **y compris « Ask user questions »** (par
+     défaut « Anyone ») : sinon un autre agent peut répondre à une question posée à Alex (un prix, une décision).
 3. « Settings » → « Secrets » → « New secret » (« Organization », « Managed value ») :
    - `CLAUDE_CODE_OAUTH_TOKEN` : le jeton Claude **du compte de la société** (jamais celui d'Alex), généré par `claude setup-token` ;
    - `GITHUB_TOKEN` : jeton GitHub fine-grained, « Resource owner » = l'organisation GitHub de la société, « All repositories »,
@@ -48,6 +49,10 @@ Trois acteurs, chacun dans son rôle :
    ne permet pas de changer un rôle après création).
 3. Instructions : ne **jamais coller** une fiche dans l'éditeur « Instructions » → « Edit » (il abîme le texte). Premier ticket du
    Directeur, rattaché au projet du repo cerveau : écrire ses propres instructions à partir de `equipe/directeur.md` par l'API.
+4. **Le premier ticket du Directeur se limite à prendre connaissance de la société et à monter l'équipe** (étapes 3 à 5). Les
+   chantiers qu'il repère deviennent des tickets en « backlog », sans responsable lancé : **aucun chantier ne démarre sans une demande
+   explicite d'Alex** (fiche Directeur, section « Rythme »). Sinon l'équipe enchaîne des dizaines de tickets et de PR dès son
+   embauche.
 
 ## Étape 4 · Équipe (Directeur, tickets rattachés au projet du repo cerveau)
 **Règle d'or** : un ticket qui lit ou modifie un repo est rattaché au projet de ce repo ; sinon la copie est périmée et `git fetch`
