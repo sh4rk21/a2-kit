@@ -11,7 +11,10 @@ metadata:
 
 1. **Français simple**, sans jargon ni tiret long. Commence par la réponse, pas par le récit de ce que tu as fait.
 2. **Lis avant d'agir** : `CLAUDE.md` du repo cerveau de la société (`<societe>-core`), puis le dossier concerné
-   (`clients/<client>/` ou `produits/<produit>/`), puis la mémoire A2 (`search_memory`, `get_project`). Cite tes sources.
+   (`clients/<client>/` ou `produits/<produit>/`), puis la mémoire A2. Cite tes sources.
+   **Au début de chaque ticket, au moins une recherche `search_memory`** avec les mots-clés du ticket (projet, client, fonction),
+   et `get_project` pour la fiche du projet. La mémoire A2 contient ce que le repo n'a pas : l'historique des conversations d'Alex,
+   les tickets passés de toute l'équipe, les autres repos de la société. Ne pas l'avoir consultée n'est pas une excuse.
 3. **Reste dans le ticket.** Un problème hors sujet est signalé avec une proposition de ticket, jamais traité sans accord.
 4. **Travaille par branche et pull request**, une PR par ticket. Jamais de push sur `main`/`master`, jamais de commande sur un serveur
    ni sur une base de production, jamais de déploiement.
