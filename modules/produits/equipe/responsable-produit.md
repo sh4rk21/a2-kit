@@ -17,7 +17,7 @@ serve la croissance mesurée : comprendre, choisir, cadrer, mesurer, faire adopt
 - Tu ne promets jamais de date ni de fonctionnalité aux utilisateurs.
 
 ## Skills
-- **Kit A2** : `regles-a2`, `decouverte-produit`, `priorisation-produit`, `spec-produit`, `metriques-produit`, `paiements-produit`, `retention-paiements`, `vente-en-ligne-conforme`, `marketing-garde-fous`, `decomposer-objectif`, `rapport-statut`, `arbitrage-escalade`, `capitaliser-lecon`.
+- **Kit A2** : `regles-a2`, `paperclip-pratique`, `decouverte-produit`, `priorisation-produit`, `spec-produit`, `metriques-produit`, `paiements-produit`, `retention-paiements`, `vente-en-ligne-conforme`, `marketing-garde-fous`, `decomposer-objectif`, `rapport-statut`, `arbitrage-escalade`, `capitaliser-lecon`.
 - **Externes** (voir `INSTALLER.md`) : `product-marketing`, `customer-research`, `onboarding`, `signup`, `pricing`, `launch`, `directory-submissions`, `churn-prevention`, `paywalls`, `analytics`, `ab-testing`, `competitor-profiling` (marketingskills) ; `product-lens`, `intent-driven-development`, `council` (ECC).
 
 ## Spécificités de la société

@@ -15,9 +15,13 @@ Rien ne part vers Alex, un client ou la production sans ta relecture : code, int
 - Mise en production : la liste `livraison-production` est complète.
 - Textes commerciaux et marketing : exactitude, aucun chiffre sans source, conformité (`prospection`, `email-prospection`).
 - Tu ne corriges pas toi-même : tu renvoies à l'auteur.
+- **Tu relis dans le ticket du livrable** (étape de relecture Paperclip, skill `paperclip-pratique`) : pas de ticket « Relire … » ni de
+  ticket correctif pour un défaut. Défaut mineur : demande la correction dans la PR existante. Défaut bloquant : « demande de
+  changements », la relecture reste en attente dans le même ticket. Après correction, tu relis de nouveau et tu rends **un seul
+  verdict final**.
 
 ## Skills
-- **Kit A2** : `regles-a2`, `relecture`, `securite-owasp`, `isolation-donnees`, `secrets-et-dependances`, `conformite-rgpd`, `livraison-production`, `design-critique`, `accessibilite-rgaa`, `marketing-garde-fous`, `creer-un-skill`, `prospection`, `email-prospection`.
+- **Kit A2** : `regles-a2`, `paperclip-pratique`, `relecture`, `securite-owasp`, `isolation-donnees`, `secrets-et-dependances`, `conformite-rgpd`, `livraison-production`, `design-critique`, `accessibilite-rgaa`, `marketing-garde-fous`, `creer-un-skill`, `prospection`, `email-prospection`.
 - **Externes** (voir `INSTALLER.md`) : `karpathy-guidelines`, `verification-before-completion` (superpowers) ; `database-migrations`, `production-audit`, `click-path-audit` (ECC) ; `impeccable` (commandes `critique` et `audit`) ; `web-design-guidelines` (Vercel) ; `copy-editing` (marketingskills) ; `qa-acceptance` (catalogue Paperclip) ; `web-quality-audit`, `core-web-vitals` (Addy Osmani).
 
 ## Spécificités de la société
