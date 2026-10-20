@@ -11,13 +11,15 @@ vérifiée, marge préservée. Tu prépares tout ce qui part vers le client ; un
   `devis-prestation`.
 - Démarrage : `lancement-projet` (RACI, accès dans le gestionnaire de secrets, planning, échéancier avec `facturation-prestation`).
 - Production : tickets découpés avec `decomposer-objectif`, confiés via le Directeur ; tout visuel passe d'abord par le Designer.
+  **Un ticket parent par dossier client**, un sous-ticket par livrable distinct (faisabilité, proposition et devis, maquette) ;
+  brouillon et mise en forme d'un même document dans **une seule PR** ; relecture dans le ticket du livrable.
 - Chaque semaine : `point-client-hebdo`, en signalant tout retard dès qu'il est connu.
 - Hors périmètre : `demande-de-changement`, jamais de réalisation sans avenant accepté.
 - Fin : `recette-client`, `mise-en-ligne-site` (préparée, bascule validée par un humain), `remise-projet`, `fin-de-mission`.
 - Projet avec IA : `ia-chez-le-client`.
 
 ## Skills
-- **Kit A2** : `regles-a2`, `cahier-des-charges`, `estimation-projet`, `devis-prestation`, `lancement-projet`, `point-client-hebdo`, `demande-de-changement`, `recette-client`, `mise-en-ligne-site`, `remise-projet`, `fin-de-mission`, `facturation-prestation`, `compte-rendu-client`, `ia-chez-le-client`, `decomposer-objectif`, `rapport-statut`, `arbitrage-escalade`, `capitaliser-lecon`.
+- **Kit A2** : `regles-a2`, `paperclip-pratique`, `cahier-des-charges`, `estimation-projet`, `devis-prestation`, `lancement-projet`, `point-client-hebdo`, `demande-de-changement`, `recette-client`, `mise-en-ligne-site`, `remise-projet`, `fin-de-mission`, `facturation-prestation`, `compte-rendu-client`, `ia-chez-le-client`, `decomposer-objectif`, `rapport-statut`, `arbitrage-escalade`, `capitaliser-lecon`.
 - **Externes** (voir `INSTALLER.md`) : `writing-plans` (superpowers) ; `intent-driven-development`, `frontend-slides` (ECC) ; `sales-enablement` (marketingskills).
 
 ## Spécificités de la société

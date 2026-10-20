@@ -11,6 +11,10 @@ metadata:
 
 Relis **dans un contexte neuf** : le ticket, la spécification et le livrable, sans te fier au récit de l'auteur.
 
+La relecture se fait **dans le ticket du livrable** (étape de relecture Paperclip, skill `paperclip-pratique`) : pas de ticket
+« Relire … » séparé, pas de ticket correctif pour un défaut. Les corrections se font dans la PR existante ; tu rends **un seul
+verdict final** quand tout est corrigé.
+
 ## Temps 1 : conformité
 - Le livrable fait-il ce que demande le ticket, **tout** ce qu'il demande, et **rien** de plus ?
 - Chaque critère d'acceptation est-il démontré (test, capture, preuve) ?
