@@ -13,17 +13,20 @@ metadata:
 
 1. **Reformule l'objectif** en une phrase avec un critère de réussite mesurable. S'il manque une information décisive, pose une
    seule question claire avant de découper.
-2. **Un ticket parent par dossier**, des sous-tickets seulement pour un **livrable distinct** ou un **responsable différent**. Pas de
-   ticket pour une relecture (elle se pose en étape sur le ticket du livrable), ni pour une correction (elle se fait dans le ticket
-   et la PR du livrable). Cherche d'abord si un ticket existe déjà.
+2. **Un ticket par livrable**, sous un ticket parent seulement si le dossier demande plusieurs livrables ou plusieurs responsables.
+   Pas de ticket pour une relecture ni pour une retouche (skill `paperclip-pratique`). Cherche d'abord si un ticket existe déjà.
+   À la création, pose les étapes : **relecture** par le Relecteur, et **validation** par l'humain qui décide quand le livrable part
+   vers un humain ou un client.
 3. **Découpe en tranches verticales** (« tracer bullets ») : chaque ticket livre un résultat utilisable de bout en bout, pas une couche
    technique isolée. Taille cible : faisable en moins de 2 heures d'agent ; sinon redécoupe.
 4. **Pour chaque ticket** : titre à l'infinitif, contexte (liens vers les fichiers et la mémoire), **critère de fin vérifiable**,
    responsable (le rôle le plus adapté), dépendances bloquantes, et ce qui est **hors périmètre**.
 5. **Ordonne** : d'abord ce qui débloque les autres, puis ce qui réduit le plus le risque, puis le reste.
-6. **Validation** : les nouveaux tickets passent par une proposition à la direction (gouvernance « Human only ») ; n'en crée pas en
-   dehors du périmètre demandé.
-7. **Suivi** : un ticket parent garde la liste et l'état ; ferme-le quand tous les enfants sont terminés ou explicitement abandonnés.
+6. **Validation** : une demande explicite de l'humain vaut feu vert, crée les tickets directement, sans carte de confirmation. Un
+   chantier que tu repères toi-même reste en « backlog » avec ta recommandation, jusqu'à son accord.
+7. **Suivi** : une fois les tickets créés et confiés, **arrête-toi** ; Paperclip te réveille quand les enfants sont terminés
+   (`issue_children_completed`). Une retouche demandée sur le parent est renvoyée au ticket du livrable, jamais transformée en
+   nouveau ticket. Ferme le parent quand tous les enfants sont terminés ou explicitement abandonnés.
 
 Erreurs courantes : tickets flous (« améliorer le site »), tickets trop gros, tickets qui supposent une décision non prise, oubli du
 critère de fin.

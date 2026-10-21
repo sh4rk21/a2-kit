@@ -20,3 +20,6 @@ metadata:
 5. **Ne rien inventer** : une case inconnue reste « à préciser ».
 6. **Pas de repo de livrable avant la signature**, pas de prix à ce stade.
 7. Une PR « Nouveau client : <nom> », récap avec les questions ouvertes.
+8. **Les documents en cours (proposition, devis, maquette, compte rendu à valider) vivent sur le ticket** (skill `paperclip-pratique`,
+   section « Livrables ») ; le dossier reçoit la **version finale** et les décisions en une PR, à une étape clé (validation par
+   l'humain, signature, clôture). Les chemins `documents/…` cités par les autres skills sont la place de cette version finale.

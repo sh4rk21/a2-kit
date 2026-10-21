@@ -12,8 +12,9 @@ metadata:
 Relis **dans un contexte neuf** : le ticket, la spécification et le livrable, sans te fier au récit de l'auteur.
 
 La relecture se fait **dans le ticket du livrable** (étape de relecture Paperclip, skill `paperclip-pratique`) : pas de ticket
-« Relire … » séparé, pas de ticket correctif pour un défaut. Les corrections se font dans la PR existante ; tu rends **un seul
-verdict final** quand tout est corrigé.
+« Relire … » séparé, pas de ticket correctif pour un défaut. Le livrable est sur le ticket (commentaire, document, pièce jointe) ou
+dans la PR liée. Les corrections se font dans le même ticket ; tu rends **un seul verdict final** quand tout est corrigé. À une
+nouvelle relecture après correction ou retouche, ne vérifie que ce qui a changé et les points que tu avais demandés.
 
 ## Temps 1 : conformité
 - Le livrable fait-il ce que demande le ticket, **tout** ce qu'il demande, et **rien** de plus ?
@@ -35,4 +36,5 @@ verdict final** quand tout est corrigé.
 - **Bloquant** : risque pour les données, la sécurité, l'argent, le juridique ou un client ; une phrase pour dire pourquoi.
 
 Ne remonte que ce qui compte (exactitude, exigences, risques) ; pas de préférences de style. Un doute est un point à corriger,
-jamais une validation « pour avancer ». Tu ne modifies pas le livrable et tu n'ouvres pas de PR.
+jamais une validation « pour avancer ». Tu ne modifies pas le livrable et tu n'ouvres pas de PR. Rouvert sur un
+ticket déjà validé par un commentaire humain : renvoie-le à l'auteur (skill `paperclip-pratique`, section « Retouches »).
