@@ -18,6 +18,8 @@ metadata:
    « À valider » et Alex l'approuve. Une décision écrite dans le repo n'a pas besoin de `write_note` : la mémoire A2 lit le repo.
 3. **Format** : contexte (2 lignes), décision ou leçon (1 phrase), pourquoi, comment l'appliquer, date et qui a décidé.
 4. **Une leçon = un fichier**, sans dupliquer ; mets à jour plutôt que d'ajouter.
+   **Regroupe** : les décisions d'un dossier client ou produit vont dans le repo en une seule PR, à une étape clé (livrable validé par
+   l'humain, signature, clôture), pas une PR par retouche. D'ici là, elles restent dans le fil du ticket.
 5. **Purge** : une leçon contredite par une décision plus récente est mise à jour ou supprimée, jamais laissée en contradiction.
 
 **En fin de ticket, pose-toi toujours la question** : ai-je appris un fait durable (décision, piège, valeur de configuration sans
