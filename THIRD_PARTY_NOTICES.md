@@ -14,3 +14,11 @@ d'œuvres tierces. Les licences d'origine sont reproduites dans `licenses/`.
 Ressources **non copiées**, importées directement depuis leur dépôt d'origine (voir `INSTALLER.md`) : obra/superpowers,
 multica-ai/andrej-karpathy-skills, anthropics/skills, vercel-labs/agent-skills, coreyhaines31/marketingskills,
 WordPress/agent-skills, catalogue Paperclip, linter `@google/design.md`.
+
+## anthropics/skills — `tiers/anthropic/claude-api`
+- Source : https://github.com/anthropics/skills (commit `dbd4588`), skill `claude-api`, licence Apache-2.0 (`tiers/anthropic/LICENSE`).
+- Modifications (Apache-2.0, section 4) : copie réduite (SKILL.md, `typescript/claude-api/`, `curl/examples.md`, références communes de
+  `shared/` sauf Managed Agents et CLI `ant`) ; le mot réservé de l'exécution dynamique, employé au sens d'évaluation, est écrit
+  « evaluation » ; deux formulations d'exemple de commande reprises ; note « Version A2 (modifiée) » en tête du SKILL.md. Script :
+  `scripts/sync-tiers.sh`.
+
