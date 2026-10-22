@@ -23,8 +23,12 @@ metadata:
    en commentaire ; une note, un plan ou une proposition en **document du ticket** ; un fichier (PDF, maquette, capture) en **pièce
    jointe**. L'humain le lit et le valide dans Paperclip, sans PR.
    **Une PR seulement pour ce qui doit vivre dans un repo** : du code, ou un document durable du repo cerveau (fiche, skill, décision,
-   dossier client à jour). Au plus une PR par ticket. Jamais de push sur `main`/`master`, jamais de commande sur un serveur ni sur une
-   base de production, jamais de déploiement.
+   dossier client à jour). **Au plus une PR par ticket, toujours ouverte depuis la branche principale** (`main` ou `master`), jamais
+   depuis la branche d'une autre PR : pas de PR empilées. Un travail qui demande plusieurs PR se découpe en plusieurs tickets.
+   Jamais de push sur `main`/`master`, jamais de commande sur un serveur ni sur une base de production, jamais de déploiement.
+   **Mise en production** : toute PR qui demande un geste en production (migration de base, variable d'environnement, commande,
+   ordre de fusion) le liste dans une section « Mise en production », étape par étape. La Base applique ces gestes et vérifie l'état
+   réel avant la fusion ; une carte confirmée par un humain ne prouve pas qu'un geste a été fait.
    **Chaque PR commence par un encadré « En clair »**, 3 lignes sans jargon pour l'humain qui fusionne (le détail technique vient
    dessous, pour le Relecteur) :
    > **En clair**

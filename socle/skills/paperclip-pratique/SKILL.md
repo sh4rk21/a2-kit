@@ -17,6 +17,8 @@ Complète le skill `paperclip` (monté automatiquement), qui fait foi pour le d�
   sous-tickets : `POST /api/companies/{companyId}/issues` avec `parentId` (et le même `projectId`).
 - **Jamais** de ticket « Relire … » (voir 3), ni de ticket pour une retouche ou une correction (voir 4), ni de ticket qui ne fait que
   documenter une action déjà couverte.
+- **Tout ticket créé a un responsable** (`assigneeAgentId`), le projet du repo concerné et ses étapes (section 3) : un ticket sans
+  responsable ne réveille personne.
 
 ## 2. Livrables : sur le ticket, pas dans une PR
 L'humain lit et valide dans Paperclip : un fichier rangé dans un repo ou un chemin du poste de travail ne lui sert à rien.
@@ -29,6 +31,8 @@ L'humain lit et valide dans Paperclip : un fichier rangé dans un repo ou un che
 | Code, ou document durable du repo cerveau (fiche, skill, décision, dossier client à jour) | **PR**, ajoutée au ticket comme work product `pull_request` |
 
 Une nouvelle version d'un fichier remplace l'ancienne sur le **même** ticket (nouvelle pièce jointe, même titre suivi de « v2 »).
+Pièces jointes et documents vont sur **ton** ticket : Paperclip refuse qu'un agent modifie le ticket d'un autre agent ; cite le lien
+dans le ticket concerné si besoin.
 Aucune donnée personnelle de client ni PDF de client dans un repo GitHub.
 
 ## 3. Relecture puis validation : des étapes sur le ticket du livrable
@@ -57,7 +61,11 @@ même requête** :
 - à corriger : `{ "status": "in_progress", "comment": "À corriger : 1. … 2. … (points localisés)" }`. Le ticket revient à l'auteur
   (`returnAssignee`), qui corrige **dans le même ticket** et le termine de nouveau : la même étape reprend.
 
-Un seul verdict final quand tout est corrigé. Pas de carte de confirmation, pas de ticket enfant à la place d'une étape.
+Un seul verdict final quand tout est corrigé. Pas de ticket enfant à la place d'une étape.
+- **Pas de carte de confirmation quand une étape de validation existe** : l'humain valide par l'étape. Une carte en plus fait
+  doublon, et valider la carte ne termine pas l'étape.
+- **« À corriger » sert seulement à demander une correction à l'auteur.** Le livrable est bon mais il reste une fusion ou un geste en
+  production ? C'est « validé » (`done`) : la fusion et la mise en production ne sont pas des corrections.
 
 ## 4. Retouches
 - **L'humain demande une retouche** en refusant l'étape de validation ou en commentant le ticket du livrable : le ticket revient à
@@ -69,6 +77,9 @@ Un seul verdict final quand tout est corrigé. Pas de carte de confirmation, pas
 - **Tu es réveillé sur un ticket terminé qui ne t'appartient plus** (par exemple le Relecteur, dernier participant, rouvert par un
   commentaire humain) : tu ne fais pas la retouche toi-même. Renvoie le ticket à son auteur (`executionState.returnAssignee`, ou
   l'auteur du livrable) avec la même requête, puis arrête-toi.
+
+- **Ne commente plus un ticket terminé** : un commentaire le rouvre. Une précision se met dans la requête qui le termine ; une
+  erreur de ta part dans un verdict déjà rendu se signale dans un ticket encore ouvert du même dossier.
 
 ## 5. Bloquer et débloquer
 - Bloquer : `PATCH /api/issues/{issueId}` `{ "blockedByIssueIds": ["<id>"], "status": "blocked" }`. Le tableau **remplace** la liste :
