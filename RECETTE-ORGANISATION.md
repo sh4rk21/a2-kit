@@ -4,9 +4,9 @@ Méthode éprouvée sur FLOW (octobre 2026), Paperclip 2026.1005.0. Elle s'appli
 suivantes) et à la remise à niveau d'une organisation existante. Libellés d'interface exacts : guide Paperclip d'A2 OS.
 
 Trois acteurs, chacun dans son rôle :
-- **Base (Claude)** : serveur, A2 OS, accès techniques. Intervient seulement aux étapes marquées « Base ».
+- **Base (Claude)** : serveur, A2 OS, accès techniques, configuration des agents et gestes de mise en production. Intervient aux étapes marquées « Base ».
 - **Alex** : ce qui demande l'interface ou un compte humain (secrets, connexions, repo privé, approbations, fusions).
-- **Directeur** : tout le reste, par tickets, dont la configuration de son équipe.
+- **Directeur** : tout le reste, par tickets ; il propose les fiches de son équipe par PR, la Base les applique.
 
 ## Étape 1 · Socle technique (Base)
 1. Organisation GitHub de la société (`<SOCIETE>-DEV`) et repo cerveau privé `<societe>-core`, créé **à partir du modèle
@@ -41,43 +41,42 @@ Trois acteurs, chacun dans son rôle :
    Tant que `skills/` ne contient aucun skill (cas d'une société neuve), Paperclip n'a rien à importer (« 0 of 0 selected ») :
    ajouter cette source au premier skill propre à la société, après sa fusion. Rafraîchir cette source reste un geste d'Alex (« ⋮ » → « Refresh ») : un agent ne peut pas lire un repo privé par là.
 
-## Étape 3 · Directeur (Alex, puis Base si besoin)
-1. Réglages : modèle Opus 5.5 (`claude-opus-5-5`), « Max concurrent runs » 1, réveil automatique désactivé, « Wake on demand » activé, « Max turns per
-   run » 300, variable `CLAUDE_CODE_OAUTH_TOKEN` en « Organization secret ».
-2. **Rôle `ceo` obligatoire** (visible dans « Overview » → « Role »). C'est ce rôle qui donne au Directeur le droit de configurer son
-   équipe et de créer des skills. S'il a un autre rôle, il ne pourra rien configurer : demander à la Base de le corriger (l'interface
-   ne permet pas de changer un rôle après création).
-3. Instructions : ne **jamais coller** une fiche dans l'éditeur « Instructions » → « Edit » (il abîme le texte). Premier ticket du
-   Directeur, rattaché au projet du repo cerveau : écrire ses propres instructions à partir de `equipe/directeur.md` par l'API.
-4. **Le premier ticket du Directeur se limite à prendre connaissance de la société et à monter l'équipe** (étapes 3 à 5). Les
-   chantiers qu'il repère deviennent des tickets en « backlog », sans responsable lancé : **aucun chantier ne démarre sans une demande
-   explicite d'Alex** (fiche Directeur, section « Rythme »). Sinon l'équipe enchaîne des dizaines de tickets et de PR dès son
-   embauche.
+## Étape 3 · Directeur (Alex, puis Base)
+1. Créer le Directeur avec le rôle **`ceo`** (agent racine ; l'interface ne permet pas de changer un rôle après création), modèle
+   Opus 5.5, variable `CLAUDE_CODE_OAUTH_TOKEN` en « Organization secret ».
+2. **Base** : instructions = `equipe/directeur.md` écrites par l'API (ne **jamais coller** une fiche dans l'éditeur « Instructions »,
+   il abîme le texte), puis les réglages communs de l'étape 4.3.
+3. **Le premier ticket du Directeur se limite à prendre connaissance de la société** et à proposer l'équipe. Les chantiers qu'il
+   repère restent en « backlog » : **aucun chantier ne démarre sans une demande explicite d'Alex**.
 
-## Étape 4 · Équipe (Directeur, tickets rattachés au projet du repo cerveau)
+## Étape 4 · Équipe (fiches par PR, configuration par la Base)
 **Règle d'or** : un ticket qui lit ou modifie un repo est rattaché au projet de ce repo ; sinon la copie est périmée et `git fetch`
 échoue.
-1. **Fiches** : copier dans `equipe/` les fiches utiles du kit (`socle/equipe/`, `modules/prestations/equipe/`,
-   `modules/produits/equipe/`), remplacer `<societe>`, compléter « Spécificités de la société » (dont la **liste des technologies de
-   tous les projets**). Skills propres à la société dans `skills/`. Par PR, relue par le Relecteur dès qu'il existe, fusionnée par Alex.
+1. **Fiches** (PR dans le repo cerveau, fusionnée par Alex) : copier dans `equipe/` les fiches utiles du kit (`socle/equipe/`,
+   `modules/prestations/equipe/`, `modules/produits/equipe/`), remplacer `<SOCIETE>`, compléter « Spécificités » (dont la **liste des
+   technologies de tous les projets**) et, dans la fiche Directeur, les identifiants du Relecteur et de l'humain qui valide. Modèle et
+   skills dans `equipe/configuration.md` (départ : `templates/societe-core/equipe/configuration.md`).
 2. **Sources de skills publiques** (kit `sh4rk21/a2-kit` et sources externes d'`INSTALLER.md`) : les ajouter **par « ... or add
-   public repo by URL »**, jamais en choisissant le repo dans la liste de la connexion GitHub. Une source publique liée à la
-   connexion devient impossible à rafraîchir par un agent. Cocher **uniquement** les dossiers d'`INSTALLER.md` (pour le kit :
-   `socle/skills`, le ou les modules utiles, `tiers/ecc`, `tiers/impeccable`, `tiers/taste`, et `tiers/wordpress` pour une société
-   WordPress).
-3. **Embauches** : une demande par poste, à partir de la fiche, avec dans la demande les **instructions** (contenu exact de la fiche)
-   et les **skills** (section « Skills », plus les technologies de tous les projets), les réglages de l'étape 3.1 et une justification
-   en 3 lignes. Alex approuve chaque embauche (« Approvals »).
-4. **Agents existants** (remise à niveau) : instructions écrites par l'API (`PUT /api/agents/<id>/instructions-bundle/file`, avec
-   `baseRevisionId` et `baseHash` lus juste avant) et skills alignés sur la fiche. Les skills de plateforme Paperclip déjà présents
-   restent (`paperclip`, `paperclip-board`, `paperclip-create-agent`…).
+   public repo by URL »**, jamais en choisissant le repo dans la liste de la connexion GitHub. Cocher **uniquement** les dossiers
+   d'`INSTALLER.md` (pour le kit : `socle/skills`, le ou les modules utiles, `tiers/ecc`, `tiers/impeccable`, `tiers/taste`, et
+   `tiers/wordpress` pour une société WordPress). Un rafraîchissement par la clé board relie la source à la connexion : la Base remet
+   `connection_id` à null.
+3. **Base, après chaque fusion de fiches** : instructions (`PUT /api/agents/<id>/instructions-bundle/file` avec `baseRevisionId`),
+   skills alignés sur `configuration.md` (`POST /api/agents/<id>/skills/sync`), et réglages communs : 1 exécution à la fois, réveil
+   automatique désactivé, réveil à la demande activé, 300 tours, `timeoutSec` 3600, `runtimeConfig.heartbeat.sessionCompaction`
+   `{enabled: true, maxSessionRuns: 10, maxSessionAgeHours: 24}`, `canCreateAgents`/`canCreateSkills` à false sauf pour le Directeur.
+   Routine « Point hebdomadaire » (lundi 9 h, Europe/Paris) confiée au Directeur, sur le projet du repo cerveau.
+4. **Embauches** : une demande par poste, à partir de la fiche (instructions exactes) et de `configuration.md`, avec une
+   justification en 3 lignes. Alex approuve chaque embauche (« Approvals ») ; la Base applique ensuite les réglages de l'étape 4.3.
 5. **Mémoire** : tout fait durable constaté par un agent est proposé avec `write_note` (validation d'Alex dans A2 OS).
+6. **Pas d'objectif (goal) ni de budget** : les objectifs viennent des demandes d'Alex ; les budgets Paperclip ne comptent que
+   l'argent facturé, toujours nul avec un abonnement Claude.
 
-## Étape 5 · Contrôles finaux (Directeur, vérifiés par la Base)
-Le Directeur rend un compte rendu avec le **hash du commit** du repo cerveau utilisé comme référence, et pour chaque agent :
+## Étape 5 · Contrôles finaux (Base : `~/a2-checkup.py`)
+Pour chaque agent :
 - [ ] instructions identiques à la fiche, caractère par caractère ;
-- [ ] skills : aucun manquant, aucun hors fiche (hors skills de plateforme), aucun introuvable dans la bibliothèque ;
-- [ ] modèle de la fiche (Opus 5.5 ou Sonnet 5), 1 exécution à la fois, réveil automatique désactivé, 300 tours, secret Claude de la société ;
+- [ ] skills : aucun manquant, aucun hors `configuration.md`, aucun introuvable dans la bibliothèque ;
+- [ ] modèle de `configuration.md`, réglages communs de l'étape 4.3 ;
 - [ ] rattachement hiérarchique conforme à `equipe/organigramme.md`, organigramme à jour (statuts « en poste »).
 
 Et pour l'organisation :
@@ -86,17 +85,19 @@ Et pour l'organisation :
 - [ ] connexion GitHub attribuée à aucun agent ; mémoire A2 OS à toute l'équipe ; Inspo (et Refero) au Designer et au Développeur ;
 - [ ] chaque projet pointe vers le bon repo de l'organisation GitHub de la société, avec `GITHUB_TOKEN`/`GH_TOKEN` en secret ;
 - [ ] sources de skills : repo cerveau via la connexion, toutes les autres par URL ; aucune source inutile ; bibliothèque sans doublon ;
-- [ ] approbation des embauches activée ; aucun secret en clair nulle part.
+- [ ] approbation des embauches activée ; gouvernance des interactions en « Human only » ; routine hebdomadaire active ; aucun secret
+  en clair nulle part.
 
 ## Ensuite : vivre avec l'organisation
 - **Un skill change** (kit, repo cerveau ou source externe) : PR → relecture → fusion par Alex → rafraîchissement de la source
   (par le Directeur pour les sources publiques, par Alex pour le repo cerveau). Les agents qui ont le skill reçoivent la nouvelle version.
 - **Un nouveau skill** : skill `creer-un-skill`. D'abord chercher s'il en existe un de qualité (bibliothèque, kit, `npx skills find`) et
-  le proposer par PR ; sinon le créer (besoin réel, demandes de test, PR). Le Directeur le coche ensuite dans la source, l'active sur les
-  agents concernés et met à jour leurs fiches par PR. **Aucun agent n'installe de skill lui-même** (`npx skills add`).
-- **Une nouvelle technologie** dans un projet : le Directeur ajoute ses skills (catalogue de la fiche Développeur) ; s'il n'y en a
-  pas dans le kit, il le signale à Alex.
-- **Toute modification d'agent** part d'un ticket validé par Alex ; l'historique est dans l'onglet « Revisions » de l'agent.
+  le proposer par PR ; sinon le créer (besoin réel, demandes de test, PR). Le Directeur met à jour `configuration.md` par PR ; après
+  fusion, la Base le coche dans la source et l'active sur les agents concernés. **Aucun agent n'installe de skill lui-même** (`npx skills add`).
+- **Une nouvelle technologie** dans un projet : le Directeur ajoute ses skills dans `configuration.md` par PR ; s'il n'y en a pas
+  dans le kit, il le signale à Alex.
+- **Toute modification d'agent** passe par une PR fusionnée par Alex, puis la Base l'applique ; l'historique est dans l'onglet
+  « Revisions » de l'agent.
 
 ## Pièges connus
 | Symptôme | Cause | Parade |
