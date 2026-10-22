@@ -59,7 +59,7 @@ Trois acteurs, chacun dans son rôle :
 2. **Sources de skills publiques** (kit `sh4rk21/a2-kit` et sources externes d'`INSTALLER.md`) : les ajouter **par « ... or add
    public repo by URL »**, jamais en choisissant le repo dans la liste de la connexion GitHub. Cocher **uniquement** les dossiers
    d'`INSTALLER.md` (pour le kit : `socle/skills`, le ou les modules utiles, `tiers/ecc`, `tiers/impeccable`, `tiers/taste`, et
-   `tiers/wordpress` pour une société WordPress). Un rafraîchissement par la clé board relie la source à la connexion : la Base remet
+   `tiers/wordpress` pour une société WordPress, `tiers/anthropic` pour une société qui code avec l'API Claude). Un rafraîchissement par la clé board relie la source à la connexion : la Base remet
    `connection_id` à null.
 3. **Base, après chaque fusion de fiches** : instructions (`PUT /api/agents/<id>/instructions-bundle/file` avec `baseRevisionId`),
    skills alignés sur `configuration.md` (`POST /api/agents/<id>/skills/sync`), et réglages communs : 1 exécution à la fois, réveil

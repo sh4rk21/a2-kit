@@ -12,7 +12,8 @@ rafraîchissement de la source. En cas d'écart, les skills du kit (`regles-a2`,
 
 ## 1. Le kit
 `https://github.com/sh4rk21/a2-kit` : cocher `socle/skills`, plus `modules/prestations/skills` et/ou `modules/produits/skills` selon
-la société, et **`tiers/ecc`, `tiers/impeccable` et `tiers/taste`**, plus **`tiers/wordpress`** pour une société WordPress. Ne pas
+la société, et **`tiers/ecc`, `tiers/impeccable` et `tiers/taste`**, plus **`tiers/wordpress`** pour une société WordPress et
+**`tiers/anthropic`** (`claude-api`) pour une société qui code avec l'API Claude. Ne pas
 cocher `templates`.
 
 `tiers/` contient des copies de skills externes que Paperclip ne peut pas importer depuis leur repo d'origine : **ECC** (le repo
@@ -29,7 +30,7 @@ Mise à jour :
 |---|---|---|
 | Karpathy | `https://github.com/multica-ai/andrej-karpathy-skills` | `skills/karpathy-guidelines` |
 | superpowers | `https://github.com/obra/superpowers` | `skills/` : `test-driven-development`, `systematic-debugging`, `writing-plans`, `verification-before-completion`, `receiving-code-review` |
-| Anthropic | `https://github.com/anthropics/skills` | `skills/` : `frontend-design`, `webapp-testing` |
+| Anthropic | `https://github.com/anthropics/skills` | `skills/` : `frontend-design`, `webapp-testing` ; `claude-api` vient de `tiers/anthropic` (l'original est refusé par le contrôle de sécurité) |
 | Vercel | `https://github.com/vercel-labs/agent-skills` | `skills/` : `web-design-guidelines`, `react-best-practices`, `composition-patterns` |
 | taste-skill | `https://github.com/Leonxlnx/taste-skill` | `skills/redesign-skill` (nommé `redesign-existing-projects`) seulement ; `design-taste-frontend` vient de `tiers/taste` |
 | Web quality (Addy Osmani) | `https://github.com/addyosmani/web-quality-skills` | `skills/performance`, `skills/core-web-vitals`, `skills/web-quality-audit` |
