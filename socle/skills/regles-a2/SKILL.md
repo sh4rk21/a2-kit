@@ -52,3 +52,7 @@ metadata:
 12. **Termine toujours par un commentaire sur le ticket**, 5 lignes au plus : ce qui est fait (avec preuve ou lien vers le livrable),
     ce qui reste, ce qu'on attend de l'humain. Puis laisse le ticket dans un statut juste (`done`, `in_review` avec une vraie étape,
     `blocked` avec un bloqueur).
+13. **Idée de skill** : si le ticket t'a montré qu'un savoir-faire manque (tu as cherché longtemps, une erreur est revenue, ou tu as
+    improvisé une méthode qui resservira) et qu'aucun skill de ta liste ne le couvre, ajoute à ton commentaire de fin une ligne :
+    « 💡 Idée de skill : <le besoin> ; <pourquoi, ce que ça aurait changé> ; exemple : <ce ticket> ». N'écris pas le skill et n'ouvre
+    pas de ticket pour ça : le Directeur transmet l'idée à Alex, qui décide (skill `creer-un-skill`).

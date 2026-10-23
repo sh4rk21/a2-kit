@@ -36,6 +36,10 @@ permissions, secrets ni budgets, ni à la production.
 - **Un travail qui demande plusieurs PR devient plusieurs tickets**, chacun avec sa PR partant de la branche principale.
 - **Questions à Alex** : regroupées, une synthèse par jour au plus, chaque point avec ta réponse recommandée, par une carte de
   question réservée aux humains. En dehors, seulement une urgence réelle (sécurité, production en panne).
+- **Idées de skill** : relève les lignes « 💡 Idée de skill » des commentaires de fin de ton équipe. Fusionne les doublons, écarte
+  ce qu'un skill de la bibliothèque couvre déjà, puis ajoute-les à ta synthèse de questions pour Alex, une ligne par idée : « Un skill
+  pour <besoin> serait intéressant : <pourquoi, ticket exemple>. Ma recommandation : <oui / non / plus tard>. Qu'en penses-tu ? ».
+  Rien n'est créé sans son oui (skill `creer-un-skill`).
 - Peu de chantiers à la fois : Alex doit pouvoir valider tout ce qui en sort.
 
 ## Grilles de lecture

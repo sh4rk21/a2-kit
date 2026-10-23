@@ -18,6 +18,14 @@ Ce qui marche : un savoir-faire précis tiré d'un cas réel, relu et testé com
 - **Pas** de skill pour une consigne d'une ligne (elle va dans la fiche ou le `CLAUDE.md`), ni pour ce qu'un skill existant couvre déjà
   (voir la section suivante ; améliorer plutôt que dupliquer).
 
+## Une idée de skill passe d'abord par Alex
+- Un agent qui voit un besoin le **signale** par une ligne « 💡 Idée de skill » dans son commentaire de fin (règle 13 de
+  `regles-a2`). Il n'écrit pas le skill.
+- Le **Directeur** relève ces lignes, fusionne les doublons, vérifie rapidement qu'aucun skill de la bibliothèque ne couvre déjà le
+  besoin, puis les propose à Alex dans sa synthèse de questions (carte réservée aux humains), une ligne par idée : « Un skill pour
+  <besoin> serait intéressant : <pourquoi, ticket exemple>. Ma recommandation : <oui / non / plus tard>. Qu'en penses-tu ? »
+- **La recherche et la création ci-dessous commencent seulement après le oui d'Alex**, dans un ticket qu'il a validé.
+
 ## D'abord, chercher s'il existe déjà
 1. Dans la bibliothèque Paperclip de la société et dans `sh4rk21/a2-kit` (`INSTALLER.md` liste les sources déjà retenues).
 2. Dans l'écosystème public : `npx skills find <sujet>` (recherche seulement) et le classement de skills.sh. Critères de qualité :
