@@ -40,7 +40,8 @@ de Paperclip.
 | Vercel | `https://github.com/vercel-labs/agent-skills` | `skills/` : `web-design-guidelines`, `react-best-practices`, `composition-patterns` |
 | taste-skill | `https://github.com/Leonxlnx/taste-skill` | `skills/redesign-skill` (nommé `redesign-existing-projects`) seulement ; `design-taste-frontend` vient de `tiers/taste` |
 | Web quality (Addy Osmani) | `https://github.com/addyosmani/web-quality-skills` | `skills/performance`, `skills/core-web-vitals`, `skills/web-quality-audit` |
-| marketingskills | `https://github.com/coreyhaines31/marketingskills` | `skills/` : `product-marketing`, `customer-research`, `content-strategy`, `copywriting`, `copy-editing`, `seo-audit`, `ai-seo`, `schema`, `site-architecture`, `cro`, `signup`, `onboarding`, `emails`, `lead-magnets`, `social`, `ads`, `ad-creative`, `analytics`, `attribution`, `ab-testing`, `competitors`, `competitor-profiling`, `public-relations`, `community-marketing`, `marketing-plan`, `marketing-psychology`, `offers`, `pricing`, `paywalls`, `launch`, `directory-submissions`, `churn-prevention`, `prospecting`, `cold-email`, `sales-enablement`, `revops` |
+| marketingskills | `https://github.com/coreyhaines31/marketingskills` | `skills/` : `product-marketing`, `customer-research`, `content-strategy`, `copywriting`, `copy-editing`, `seo-audit`, `ai-seo`, `schema`, `site-architecture`, `cro`, `signup`, `onboarding`, `emails`, `lead-magnets`, `social`, `ads`, `ad-creative`, `analytics`, `attribution`, `ab-testing`, `competitors`, `competitor-profiling`, `public-relations`, `community-marketing`, `marketing-plan`, `marketing-psychology`, `offers`, `pricing`, `paywalls`, `launch`, `directory-submissions`, `churn-prevention`, `prospecting`, `cold-email`, `sales-enablement`, `revops`, `link-building`, `referrals`, `conversion-tracking`, `events` (en option, Commercial). `conversion-tracking` contient du code destiné aux sites : refaire le contrôle à chaque rafraîchissement |
+| ponytail | `https://github.com/DietrichGebert/ponytail` | `skills/ponytail-debt` et `skills/ponytail-audit` **seulement**. Ne pas cocher les copies de `.openclaw/skills/`, qui portent les mêmes noms |
 | humanizer | `https://github.com/blader/humanizer` | `SKILL.md` (à la racine, nommé `humanizer`). Outil de style pour retirer les tics d'écriture IA ; jamais pour faire passer un texte pour humain auprès d'un lecteur qui doit savoir |
 | WordPress (sociétés WordPress) | `https://github.com/WordPress/agent-skills` | les skills `wp-*` utiles (`wp-plugin-development`, `wp-block-development`, `wp-block-themes`, `wp-rest-api`, `wp-interactivity-api`, `wp-phpstan`, `wp-env`, `wp-playground`, `wp-wpcli-and-ops`) ; `wp-plugin-directory-guidelines` et `wp-performance` viennent de `tiers/wordpress` |
 
@@ -54,6 +55,14 @@ de Paperclip.
   de sécurité de Paperclip (motifs d'exécution dynamique). Le kit couvre ces sujets (`securite-owasp`, superpowers, `livraison-production`).
 - marketingskills `programmatic-seo` (contenu en masse, risque « scaled content abuse »), `marketing-loops` (boucles autonomes),
   `sms`, `video`, `image`, `aso` (hors besoin).
+- marketingskills `marketing-ideas` (propose le « Parasite SEO », que Google sanctionne), `co-marketing` (partage de prospects entre
+  sociétés sans parler du RGPD), `popups` (comptes à rebours), `influencer-marketing` (droit américain, ignore la loi française de
+  2023 sur les influenceurs), `marketing-council` (avis simulés de marketeurs célèbres ; `council` d'ECC couvre le besoin),
+  `free-tools` (un outil gratuit est un projet de développement, décidé par Alex et confié au Développeur par ticket).
+- ponytail `ponytail` (contredit le TDD strict, « Trivial changes need none », et `spec-avant-code` ; ses niveaux de session n'ont pas
+  de sens dans Paperclip), `ponytail-review` (verdict et rapport en anglais concurrents de `relecture` ; ses règles utiles sont
+  reprises dans `relecture`), `ponytail-gain` (chiffres d'un banc d'essai contre un agent sans aucun skill, sans valeur pour nous),
+  `ponytail-help` (aide du plugin, sans objet dans Paperclip).
 - superpowers `brainstorming` (dialogue interactif : remplacé par `spec-avant-code`), `using-superpowers`.
 - Vercel `find-skills` : il installe des skills sur tout le serveur sans confirmation (`npx skills add -g -y`), hors bibliothèque et
   hors relecture. Sa méthode de recherche est reprise dans `creer-un-skill` (recherche seulement, proposition par PR).

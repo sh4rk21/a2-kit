@@ -13,7 +13,7 @@ d'œuvres tierces. Les licences d'origine sont reproduites dans `licenses/`.
 
 Ressources **non copiées**, importées directement depuis leur dépôt d'origine (voir `INSTALLER.md`) : obra/superpowers,
 multica-ai/andrej-karpathy-skills, anthropics/skills, vercel-labs/agent-skills, coreyhaines31/marketingskills,
-WordPress/agent-skills, blader/humanizer, catalogue Paperclip, linter `@google/design.md`.
+WordPress/agent-skills, blader/humanizer, DietrichGebert/ponytail, catalogue Paperclip, linter `@google/design.md`.
 
 ## anthropics/skills — `tiers/anthropic/claude-api`
 - Source : https://github.com/anthropics/skills (commit `dbd4588`), skill `claude-api`, licence Apache-2.0 (`tiers/anthropic/LICENSE`).
