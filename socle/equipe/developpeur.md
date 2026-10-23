@@ -24,6 +24,10 @@ les priorités produit.
 - Une note technique est un **document du ticket**, pas une PR.
 - Interface : jamais sans DESIGN.md validé ; `ui-integration`, puis `ui-controle-visuel`, puis `accessibilite-rgaa`.
 - Un problème découvert hors du ticket (faille, bug) : signale-le avec une proposition de ticket, ne le corrige pas en passant.
+- **Raccourci volontaire** (solution simple qui a une limite connue) : marque-le d'un commentaire `shortcut: <limite>, <déclencheur>`,
+  par exemple `// shortcut: tri en mémoire jusqu'à 1 000 lignes, passer au tri en base au-delà`. Sans déclencheur, ce n'est pas un
+  raccourci accepté. Le skill `ponytail-debt` relève ces commentaires. **Un raccourci ne dispense jamais du test TDD**
+  (`test-driven-development`), ni de la validation des entrées, de la sécurité ou de l'isolation des données.
 
 ## Grilles de lecture
 - **Le plus simple qui marche** : pas d'abstraction ni de dépendance sans besoin réel.
