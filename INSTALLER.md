@@ -13,16 +13,22 @@ rafraîchissement de la source. En cas d'écart, les skills du kit (`regles-a2`,
 ## 1. Le kit
 `https://github.com/sh4rk21/a2-kit` : cocher `socle/skills`, plus `modules/prestations/skills` et/ou `modules/produits/skills` selon
 la société, et **`tiers/ecc`, `tiers/impeccable` et `tiers/taste`**, plus **`tiers/wordpress`** pour une société WordPress et
-**`tiers/anthropic`** (`claude-api`) pour une société qui code avec l'API Claude. Ne pas
+**`tiers/anthropic`** (`claude-api`) pour une société qui code avec l'API Claude, et **`tiers/archify`** (schémas) et
+**`tiers/anydoc`** (lecture des documents Office et PDF) pour toutes. Ne pas
 cocher `templates`.
 
 `tiers/` contient des copies de skills externes que Paperclip ne peut pas importer depuis leur repo d'origine : **ECC** (le repo
 dépasse la limite de 1 000 skills analysés ; 47 skills retenus, dont un catalogue de technologies) et **Impeccable** (fichier de plus d'1 Mo et moteur binaire ; copié
 sans son dossier `scripts/`, le détecteur passe par `npx impeccable@4.1.0`), **taste-skill** `design-taste-frontend` (ses scripts
 et son dossier `evals/` contiennent le mot réservé de l'exécution dynamique : méthode renommée, `evals/` retiré) et **WordPress**
-`wp-performance`, `wp-plugin-directory-guidelines` (mentions de l'exécution dynamique reformulées). Licences d'origine incluses.
+`wp-performance`, `wp-plugin-directory-guidelines` (mentions de l'exécution dynamique reformulées), **archify** (exemples HTML de
+plus d'1 Mo retirés, deux octets NUL échappés, un commentaire reformulé, vérification de mise à jour coupée) et **anydoc**
+`convert-documents-to-markdown` (version figée à 0.2.4, OCR hébergé interdit car il envoie le document à un service externe).
+Licences d'origine incluses.
 Mise à jour :
-`scripts/sync-tiers.sh <ref-ECC> <ref-Impeccable> <ref-taste> <ref-WordPress>` puis PR.
+`scripts/sync-tiers.sh <ref-ECC> <ref-Impeccable> <ref-taste> <ref-WordPress> <ref-anthropics> <ref-archify> <ref-anydoc>` puis PR.
+Avant chaque PR qui ajoute ou met à jour une source, la Base la passe au scanner SkillSpector (NVIDIA, sans IA) en plus du filtre
+de Paperclip.
 
 ## 2. Sources externes (licences MIT ou Apache-2.0, toutes vérifiées contre le contrôle de sécurité de Paperclip)
 
@@ -35,6 +41,7 @@ Mise à jour :
 | taste-skill | `https://github.com/Leonxlnx/taste-skill` | `skills/redesign-skill` (nommé `redesign-existing-projects`) seulement ; `design-taste-frontend` vient de `tiers/taste` |
 | Web quality (Addy Osmani) | `https://github.com/addyosmani/web-quality-skills` | `skills/performance`, `skills/core-web-vitals`, `skills/web-quality-audit` |
 | marketingskills | `https://github.com/coreyhaines31/marketingskills` | `skills/` : `product-marketing`, `customer-research`, `content-strategy`, `copywriting`, `copy-editing`, `seo-audit`, `ai-seo`, `schema`, `site-architecture`, `cro`, `signup`, `onboarding`, `emails`, `lead-magnets`, `social`, `ads`, `ad-creative`, `analytics`, `attribution`, `ab-testing`, `competitors`, `competitor-profiling`, `public-relations`, `community-marketing`, `marketing-plan`, `marketing-psychology`, `offers`, `pricing`, `paywalls`, `launch`, `directory-submissions`, `churn-prevention`, `prospecting`, `cold-email`, `sales-enablement`, `revops` |
+| humanizer | `https://github.com/blader/humanizer` | `SKILL.md` (à la racine, nommé `humanizer`). Outil de style pour retirer les tics d'écriture IA ; jamais pour faire passer un texte pour humain auprès d'un lecteur qui doit savoir |
 | WordPress (sociétés WordPress) | `https://github.com/WordPress/agent-skills` | les skills `wp-*` utiles (`wp-plugin-development`, `wp-block-development`, `wp-block-themes`, `wp-rest-api`, `wp-interactivity-api`, `wp-phpstan`, `wp-env`, `wp-playground`, `wp-wpcli-and-ops`) ; `wp-plugin-directory-guidelines` et `wp-performance` viennent de `tiers/wordpress` |
 
 **Catalogue Paperclip** (« Skills » → « Discover ») : `task-planning`, `summarize-status`, `github-pr-workflow`, `qa-acceptance`,
@@ -75,7 +82,7 @@ Monter de version uniquement par une PR sur ce fichier.
 | shadcn | recherche et installation de composants | `npx -y shadcn@4.21.4 mcp` |
 | Inspo (gratuit) | 832 sites réels, DESIGN.md par site (skill `design-references`) | URL `https://inspomcp.dev/api/mcp`, sans authentification |
 | Refero (abonnement Pro, optionnel) | écrans et parcours de produits réels (skill `design-references`) | URL `https://api.refero.design/mcp`, connexion OAuth (« Sign in ») |
-| Context7 | documentation à jour des bibliothèques (skill `documentation-lookup`) | serveur distant Context7 |
+| Context7 | documentation à jour des bibliothèques (skill `documentation-lookup`) | URL `https://mcp.context7.com/mcp`, sans authentification ; accès donné au Développeur, au Relecteur et à la Maintenance |
 | Mémoire A2 | contexte des projets | voir le guide Paperclip d'A2 OS |
 
 **Navigateur des agents** : sur notre instance (mode authentifié et public), Paperclip refuse les serveurs MCP locaux et les adresses

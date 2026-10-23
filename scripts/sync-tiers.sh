@@ -2,7 +2,9 @@
 # Copie dans tiers/ les skills externes que Paperclip ne peut pas importer depuis leur repo d'origine
 # (ECC : plus de 1 000 skills à analyser ; Impeccable : fichier de plus d'1 Mo et moteur binaire ; taste-skill et WordPress :
 # le mot réservé de l'exécution dynamique apparaît dans un script ou une commande, refusé par le contrôle de sécurité).
-# Usage : scripts/sync-tiers.sh [ref-ECC] [ref-Impeccable] [ref-taste] [ref-WordPress] [ref-anthropics-skills]   (par défaut : les versions figées)
+# archify : fichiers de plus d'1 Mo, octets NUL et mot réservé ; anydoc : option qui envoie les documents à un service externe.
+# Usage : scripts/sync-tiers.sh [ref-ECC] [ref-Impeccable] [ref-taste] [ref-WordPress] [ref-anthropics-skills] [ref-archify] [ref-anydoc]
+#   (par défaut : les versions figées)
 set -euo pipefail
 
 ECC_REF="${1:-ef648e01899ba3e8dc6371642deaaf64b4477775}"
@@ -10,6 +12,9 @@ IMPECCABLE_REF="${2:-778c8a7b71ccd5bfe3ca6ac68c15d9d872d0f87d}"
 TASTE_REF="${3:-f624f37a8c650b9cc550253104925efe4c8de246}"
 WP_REF="${4:-55cd0f78b996f453c194a1a6ecc5c9a2e0f6cf15}"
 ANTH_REF="${5:-dbd4588f9e1033efb41dad4bef2f7947c8993d44}"
+ARCHIFY_REF="${6:-25cf37080fc8b1dbe758a4efc3935b55f3327083}"
+ANYDOC_REF="${7:-3b6d4cda16631d2e83b5a0b9a4ddec35d40d3462}"
+ANYDOC_NPM="0.2.4"
 ECC_SKILLS=(database-migrations postgres-patterns prisma-patterns api-design backend-patterns error-handling coding-standards
   git-workflow docker-patterns frontend-patterns react-patterns react-testing nextjs-turbopack e2e-testing browser-qa canary-watch
   click-path-audit benchmark documentation-lookup production-audit codebase-onboarding architecture-decision-records
@@ -116,4 +121,50 @@ note=("\n> **Version A2 (modifiée)** : copie réduite de `anthropics/skills` (A
 "dynamique, employé au sens d'évaluation, y est écrit « evaluation » pour passer le contrôle de sécurité de Paperclip.\n")
 t=re.sub(r'(\n---\n)', r'\1'+note.replace('\\','\\\\'), t, count=1); open(p,'w').write(t)
 PY
-echo "tiers/ synchronisé : ECC $ECC_REF, Impeccable $IMPECCABLE_REF, taste $TASTE_REF, WordPress $WP_REF, anthropics $ANTH_REF"
+# archify (MIT) : le skill `archify/` sans les exemples rendus en HTML (plus d'1 Mo pour certains ; les exemples JSON restent).
+# Modifications : un commentaire de code qui cite le mot réservé de l'exécution dynamique est reformulé ; deux octets NUL écrits
+# tels quels dans une chaîne sont remplacés par leur écriture échappée (même valeur) ; vérification de mise à jour désactivée.
+fetch https://github.com/tt-a1i/archify.git archify "$ARCHIFY_REF"
+rm -rf "$ROOT/tiers/archify"; mkdir -p "$ROOT/tiers/archify"
+cp -R "$TMP/archify/archify" "$ROOT/tiers/archify/archify"
+rm -f "$ROOT/tiers/archify/archify/examples/"*.html
+cp "$TMP/archify/LICENSE" "$ROOT/tiers/archify/LICENSE"
+python3 - "$ROOT/tiers/archify/archify" <<'PY2'
+import sys,os,re
+r=sys.argv[1]
+p=os.path.join(r,'explainer/parse.mjs'); t=open(p).read()
+a='No eval or JSON rewriting.'
+if a not in t: sys.exit('motif introuvable dans explainer/parse.mjs')
+open(p,'w').write(t.replace(a,'No dynamic code execution or JSON rewriting.'))
+p=os.path.join(r,'renderers/shared/diagnostics.mjs'); b=open(p,'rb').read()
+if b.count(b'\x00')!=2: sys.exit('octets NUL inattendus dans diagnostics.mjs')
+open(p,'wb').write(b.replace(b'\x00',b'\\u0000'))
+p=os.path.join(r,'SKILL.md'); t=open(p).read()
+note=("\n> **Version A2 (modifiée)** : copie de `tt-a1i/archify` (MIT) sans les exemples rendus en HTML (les exemples JSON cités "
+"plus bas sont présents). Lance toujours les commandes avec `ARCHIFY_UPDATE_CHECK_DISABLED=1` devant : pas de vérification ni "
+"d'annonce de mise à jour, la version est figée par le kit. Le dossier de sortie `.archify/` va dans le répertoire de travail du "
+"ticket, jamais dans le dossier du skill ; le schéma livré se joint au ticket (skill `paperclip-pratique`).\n")
+t=re.sub(r'(\n---\n)', r'\1'+note.replace('\\','\\\\'), t, count=1); open(p,'w').write(t)
+PY2
+
+# firecrawl/anydoc (MIT) : skill `convert-documents-to-markdown`. Modifications : version de l'outil figée ; l'option qui envoie
+# les pages scannées à un service externe est interdite (documents de clients, RGPD).
+fetch https://github.com/firecrawl/anydoc.git anydoc "$ANYDOC_REF"
+rm -rf "$ROOT/tiers/anydoc"; mkdir -p "$ROOT/tiers/anydoc"
+cp -R "$TMP/anydoc/skills/convert-documents-to-markdown" "$ROOT/tiers/anydoc/convert-documents-to-markdown"
+cp "$TMP/anydoc/LICENSE" "$ROOT/tiers/anydoc/LICENSE"
+python3 - "$ROOT/tiers/anydoc/convert-documents-to-markdown/SKILL.md" "$ANYDOC_NPM" <<'PY2'
+import sys,re
+p,v=sys.argv[1],sys.argv[2]; t=open(p).read()
+if t.count('npx -y @firecrawl/anydoc ')!=3: sys.exit('commandes npx inattendues dans anydoc')
+t=t.replace('npx -y @firecrawl/anydoc ','npx -y @firecrawl/anydoc@'+v+' ')
+old=re.search(r'\n5\. Scanned and image-only pages need OCR.*\n',t)
+if not old: sys.exit('règle OCR introuvable dans anydoc')
+t=t.replace(old.group(0),"\n5. Scanned and image-only pages need OCR, which anydoc does not do, so the document exits 3. **Never use `--ocr hosted`, `--api-key` or `FIRECRAWL_API_KEY`**: they send the document to an outside service, which is forbidden for client documents (GDPR). Report the pages that could not be read in the ticket and ask for a text version.\n")
+t=t.replace('`@firecrawl/anydoc` on npm','`@firecrawl/anydoc@'+v+'` on npm (exact version)')
+note=("\n> **Version A2 (modifiée)** : copie de `firecrawl/anydoc` (MIT), version de l'outil figée à "+v+" ; l'OCR hébergé, qui envoie "
+"le document à un service externe, est interdit.\n")
+t=re.sub(r'(\n---\n)', r'\1'+note, t, count=1); open(p,'w').write(t)
+PY2
+
+echo "tiers/ synchronisé : ECC $ECC_REF, Impeccable $IMPECCABLE_REF, taste $TASTE_REF, WordPress $WP_REF, anthropics $ANTH_REF, archify $ARCHIFY_REF, anydoc $ANYDOC_REF (npm $ANYDOC_NPM)"
