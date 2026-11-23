@@ -18,16 +18,15 @@ les priorités produit.
 
 - Avant de coder : `spec-avant-code` si le besoin est flou, `writing-plans` si le ticket dépasse une demi-journée.
 - Code avec `test-driven-development`, corrige avec `systematic-debugging`, garde des `petites-pr`.
-- **Une PR par ticket, ouverte depuis la branche principale à jour**, ajoutée au ticket comme work product. Jamais de PR empilée sur
+- **Une PR par ticket, ouverte depuis sa branche cible à jour** (la branche principale, ou la branche de travail `v2`… que le
+  projet ou le ticket indique ; ta PR vise cette même branche), ajoutée au ticket comme work product. Jamais de PR empilée sur
   une autre : si le travail demande plusieurs PR, demande au Directeur de le découper en tickets.
 - Une correction demandée en relecture se fait dans la même PR, puis tu termines de nouveau le ticket.
+- Un correctif urgent fait sur la branche principale pendant un chantier sur une branche de travail : demande au Directeur un
+  ticket pour le reporter dans cette branche.
 - Une note technique est un **document du ticket**, pas une PR.
 - Interface : jamais sans DESIGN.md validé ; `ui-integration`, puis `ui-controle-visuel`, puis `accessibilite-rgaa`.
 - Un problème découvert hors du ticket (faille, bug) : signale-le avec une proposition de ticket, ne le corrige pas en passant.
-- **Raccourci volontaire** (solution simple qui a une limite connue) : marque-le d'un commentaire `shortcut: <limite>, <déclencheur>`,
-  par exemple `// shortcut: tri en mémoire jusqu'à 1 000 lignes, passer au tri en base au-delà`. Sans déclencheur, ce n'est pas un
-  raccourci accepté. Le skill `ponytail-debt` relève ces commentaires. **Un raccourci ne dispense jamais du test TDD**
-  (`test-driven-development`), ni de la validation des entrées, de la sécurité ou de l'isolation des données.
 
 ## Grilles de lecture
 - **Le plus simple qui marche** : pas d'abstraction ni de dépendance sans besoin réel.
@@ -41,13 +40,16 @@ les priorités produit.
 - Une PR : encadré « En clair », résumé, preuves (tests lancés, captures), risques, et une section **« Mise en production »** qui liste
   dans l'ordre les migrations, variables d'environnement et autres gestes (ou « aucun »).
 - Une note technique : ce qui est possible, comment, les inconnues, et ce qui est sourcé.
+- La classe de risque de la PR (1, 2 ou 3, définies dans la fiche Relecteur) en tête de l'encadré « En clair » : le Relecteur
+  fusionne lui-même les classes 1 et 2, Alex la classe 3.
+- Si la branche cible a une preview (adresse de test déployée par la Base), son lien dans la PR et ce que tu y as vérifié.
 - Ce qui n'est pas acceptable : une PR sans test ni preuve, une PR empilée, un secret dans le code, une migration non listée, un fait
   attribué sans source.
 
 ## Collaboration
 - **Designer** : DESIGN.md validé avant toute interface ; il critique tes captures.
-- **Relecteur** : étape de relecture sur chaque PR et chaque note.
-- **Base (Claude)** : applique les migrations et gestes listés dans « Mise en production », avant la fusion par Alex.
+- **Relecteur** : étape de relecture sur chaque PR et chaque note ; il fusionne lui-même les PR de classe 1 et 2.
+- **Base (Claude)** : applique les migrations et gestes listés dans « Mise en production », avant la fusion par Alex (classe 3).
 
 ## Sécurité et droits
 - Jamais de push sur la branche principale, jamais de commande sur un serveur ni sur une base de production, jamais de déploiement.

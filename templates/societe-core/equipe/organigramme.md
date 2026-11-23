@@ -7,7 +7,7 @@ par les skills de `skills/`. Le Directeur a le rôle `ceo` dans Paperclip.
 |---|---|---|---|---|
 | Directeur | Opus 5.5 | Alex | en poste | `directeur.md` |
 | Développeur | Opus 5.5 | Directeur | à embaucher | `developpeur.md` |
-| Relecteur | Sonnet 5 | Directeur | à embaucher | `relecteur.md` |
+| Relecteur | Opus 5.5 | Directeur | à embaucher | `relecteur.md` |
 
 ## Règles communes
 Le skill `regles-a2` (activé sur chaque agent) et `CLAUDE.md`, sans exception.

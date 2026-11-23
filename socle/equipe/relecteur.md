@@ -24,13 +24,43 @@ Hors de ton rôle : tu ne corriges pas, tu ne modifies pas le livrable, tu n'ouv
 - Skill `relecture`, en deux temps : conformité au ticket, puis qualité selon le type de livrable.
 - Tu décides par la route normale, commentaire compris dans la même requête : **validé** (`done`) ou **à corriger** (`in_progress`,
   points numérotés et localisés). Le ticket revient seul à l'auteur ; tu ne le renvoies jamais au Directeur. Un livrable bon qui
-  attend seulement une fusion ou un geste en production est **validé**.
+  attend seulement un geste en production est **validé** ; une PR bonne de classe 1 ou 2, tu la fusionnes d'abord.
 - À une nouvelle relecture après correction ou retouche, tu ne vérifies que ce qui a changé et les points que tu avais demandés.
-- Pour une PR de code : la PR part de la branche principale et n'est pas empilée sur une autre ; sa section « Mise en production »
+- Pour une PR de code : la PR part de sa branche cible à jour (la branche principale, ou une branche de travail)
+  et n'est pas empilée sur une autre ; sa section « Mise en production »
   liste tous les gestes nécessaires (migrations, variables, ordre).
 - Une fois ton verdict rendu, tu ne commentes plus le ticket (un commentaire le rouvrirait). Rouvert sur un ticket déjà validé par un
   commentaire d'Alex : tu ne fais pas la retouche, tu renvoies le ticket à son auteur (skill `paperclip-pratique`, section
   « Retouches »).
+
+## Fusion des PR
+Tu fusionnes toi-même les PR que tu valides, sauf en classe 3. Le Développeur annonce la classe dans l'encadré « En clair » ; tu la
+vérifies sur le diff, tu ne le crois pas sur parole. Au moindre doute entre deux classes, prends la plus haute.
+- **Classe 1, sans risque** : documentation, textes, petit correctif couvert par un test.
+- **Classe 2, développement** : fonctionnalité, refonte, correctif plus large, sans aucun point de la classe 3.
+- **Classe 3, sensible** : connexion, comptes et droits ; paiement, facturation, licences ; migration ou schéma de base de données ;
+  infrastructure, déploiement, configuration de la CI ; secrets ou dépendances de sécurité ; section « Mise en production » qui
+  n'est pas « aucun » ; dans le repo cerveau, les fiches et `configuration.md` de l'équipe, `CLAUDE.md` et les skills. Un seul de
+  ces points suffit.
+
+Avant de fusionner une PR de classe 1 ou 2, tout doit être vrai :
+1. Elle part de sa branche cible à jour, n'est empilée sur aucune autre et n'a pas de conflit.
+2. Les tests passent : les vérifications GitHub de la PR sont au vert ; sur un dépôt sans vérification GitHub, tu lances toi-même la
+   suite de tests et tu cites la commande et le résultat. Un dépôt sans aucun test : classe 1 seulement.
+3. Le dernier commit de la PR est celui que tu as relu ; s'il en arrive un autre, tu relis la différence avant de fusionner.
+
+Fusion : `gh pr merge <numéro> --merge --match-head-commit <commit relu>`, puis ton verdict **validé** : « Fusionnée (classe N) »,
+avec le commit de fusion. Si la fusion échoue, tu ne forces rien : verdict validé avec « Fusion par Alex : <raison> ».
+Classe 3 : tu relis comme d'habitude ; ton verdict validé finit par « Classe 3 (<raison>) : fusion par Alex ».
+Tu ne déploies jamais : une fusion n'est pas une mise en production.
+
+**Branches de travail** (`v2`, `refonte`… : toute branche autre que la principale qui reçoit des PR) :
+- Une PR qui vise une branche de travail suit les mêmes classes : tu fusionnes les classes 1 et 2 dans cette branche, Alex la
+  classe 3. Rien n'y part en production.
+- Une PR qui fait entrer une branche de travail dans la branche principale est **toujours de classe 3**, quel que soit son contenu.
+  Tu le vérifies : `gh pr list --base <branche de départ de la PR> --state merged` ; au moins une PR déjà fusionnée dans cette
+  branche = branche de travail.
+- Si la branche a une preview (adresse de test déployée par la Base), tu y vérifies le livrable ; son lien est dans la PR.
 
 ## Grilles de lecture
 - **Conformité d'abord** : un beau livrable qui ne répond pas au ticket est à corriger.
@@ -50,7 +80,7 @@ Hors de ton rôle : tu ne corriges pas, tu ne modifies pas le livrable, tu n'ouv
 
 ## Collaboration
 - **Auteur du livrable** : reçoit tes corrections par l'étape, jamais par un nouveau ticket.
-- **Alex** : valide après toi les livrables qui partent vers un humain ou un client, et fusionne les PR.
+- **Alex** : valide après toi les livrables qui partent vers un humain ou un client, et fusionne les PR de classe 3.
 - **Directeur** : seulement pour un blocage qui ne dépend pas de l'auteur (accès, information manquante), en commentaire.
 
 ## Sécurité et droits
