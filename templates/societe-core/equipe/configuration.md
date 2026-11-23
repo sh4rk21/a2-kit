@@ -7,6 +7,7 @@ agents, en une fois, et le note dans le ticket. Le Directeur ne modifie pas les 
 Réglages communs : adaptateur `claude_local`, 1 exécution à la fois, réveil automatique désactivé, réveil à la demande activé,
 300 tours au plus et 60 minutes au plus par exécution, nouvelle session après 10 réveils ou 24 heures sur un même ticket, secret
 `CLAUDE_CODE_OAUTH_TOKEN` de la société. Seul le Directeur peut demander une embauche ou créer un skill.
+Effort de réflexion : élevé pour le Relecteur, le Responsable produit et le Chef de projet ; moyen pour les autres.
 
 Garder seulement les postes de l'organigramme ; ajouter les skills propres à la société et ceux des technologies de ses projets.
 
@@ -14,7 +15,7 @@ Garder seulement les postes de l'organigramme ; ajouter les skills propres à la
 - **Kit A2** : `regles-a2`, `paperclip-pratique`, `decomposer-objectif`, `rapport-statut`, `arbitrage-escalade`, `passation`, `capitaliser-lecon`, `creer-un-skill`.
 - **Externes** (voir `INSTALLER.md`) : `architecture-decision-records`, `council` (ECC) ; `task-planning`, `summarize-status` (catalogue Paperclip).
 
-## Relecteur · Sonnet 5
+## Relecteur · Opus 5.5
 - **Kit A2** : `regles-a2`, `paperclip-pratique`, `relecture`, `securite-owasp`, `isolation-donnees`, `secrets-et-dependances`, `conformite-rgpd`, `livraison-production`, `design-critique`, `accessibilite-rgaa`, `marketing-garde-fous`, `creer-un-skill`, `prospection`, `email-prospection`.
 - **Externes** (voir `INSTALLER.md`) : `karpathy-guidelines`, `verification-before-completion` (superpowers) ; `database-migrations`, `production-audit`, `click-path-audit` (ECC) ; `impeccable` (commandes `critique` et `audit`) ; `web-design-guidelines` (Vercel) ; `copy-editing` (marketingskills) ; `qa-acceptance` (catalogue Paperclip) ; `web-quality-audit`, `core-web-vitals` (Addy Osmani).
 
@@ -34,11 +35,11 @@ Garder seulement les postes de l'organigramme ; ajouter les skills propres à la
 - **Kit A2** : `regles-a2`, `paperclip-pratique`, `design-decouverte`, `design-references`, `design-direction`, `design-systeme`, `design-critique`, `accessibilite-rgaa`, `ui-controle-visuel`, `passation`.
 - **Externes** (voir `INSTALLER.md`) : `impeccable` ; `frontend-design` (Anthropic) ; `web-design-guidelines` (Vercel) ; `make-interfaces-feel-better`, `motion-foundations`, `frontend-a11y`, `brand-voice`, `competitive-platform-analysis`, `frontend-slides` (ECC) ; `wireframe`, `agent-browser` (catalogue Paperclip) ; `copywriting` (marketingskills) pour les textes d'interface ; `design-taste-frontend`, `redesign-existing-projects` (taste-skill).
 
-## Commercial · Sonnet 5
+## Commercial · Sonnet 5.5
 - **Kit A2** : `regles-a2`, `paperclip-pratique`, `prospection`, `email-prospection`, `pipeline-crm`, `etude-de-cas`, `conformite-rgpd`, `marketing-garde-fous`, `rapport-statut`.
 - **Externes** (voir `INSTALLER.md`) : `customer-research`, `product-marketing`, `prospecting`, `cold-email`, `sales-enablement`, `competitor-profiling`, `offers`, `revops`, `marketing-psychology`, `referrals` (marketingskills) ; en option `events` (marketingskills, salons et événements) ; `market-research` (ECC) ; `humanizer` (relecture du style des textes) ; `convert-documents-to-markdown` (anydoc, appels d'offres et documents des prospects).
 
-## Marketing et contenu · Sonnet 5
+## Marketing et contenu · Sonnet 5.5
 - **Kit A2** : `regles-a2`, `paperclip-pratique`, `marketing-garde-fous`, `linkedin-fondateur`, `etude-de-cas`, `rapport-croissance`, `conformite-rgpd`.
 - **Externes** (voir `INSTALLER.md`) : `product-marketing`, `customer-research`, `content-strategy`, `copywriting`, `copy-editing`, `seo-audit`, `ai-seo`, `schema`, `site-architecture`, `cro`, `emails`, `lead-magnets`, `social`, `ads`, `ad-creative`, `analytics`, `attribution`, `ab-testing`, `competitors`, `public-relations`, `community-marketing`, `marketing-plan`, `link-building`, `referrals` (marketingskills) ; `conversion-tracking` (marketingskills), seulement pour une société qui fait de la publicité ; `brand-voice`, `article-writing` (ECC) ; `humanizer` (relecture du style des textes).
 
@@ -46,7 +47,7 @@ Garder seulement les postes de l'organigramme ; ajouter les skills propres à la
 - **Kit A2** : `regles-a2`, `paperclip-pratique`, `cahier-des-charges`, `estimation-projet`, `devis-prestation`, `lancement-projet`, `point-client-hebdo`, `demande-de-changement`, `recette-client`, `mise-en-ligne-site`, `remise-projet`, `fin-de-mission`, `facturation-prestation`, `compte-rendu-client`, `ia-chez-le-client`, `decomposer-objectif`, `rapport-statut`, `arbitrage-escalade`, `capitaliser-lecon`.
 - **Externes** (voir `INSTALLER.md`) : `writing-plans` (superpowers) ; `intent-driven-development`, `frontend-slides` (ECC) ; `sales-enablement` (marketingskills) ; `humanizer` (comptes rendus et textes aux clients) ; `archify` (schémas pour les clients) ; `convert-documents-to-markdown` (anydoc, documents des clients).
 
-## Maintenance · Sonnet 5
+## Maintenance · Sonnet 5.5
 - **Kit A2** : `regles-a2`, `paperclip-pratique`, `maintenance-sla`, `livraison-production`, `secrets-et-dependances`, `securite-owasp`, `demande-de-changement`, `rapport-statut`, `fin-de-mission`.
 - **Externes** (voir `INSTALLER.md`) : `systematic-debugging`, `verification-before-completion` (superpowers) ; `canary-watch`, `browser-qa`, `production-audit`, `database-migrations` (ECC) ; `agent-browser` (catalogue Paperclip) ; `ponytail-debt`, `ponytail-audit` (ponytail, passage préventif : rapport posé en document du ticket, suppressions proposées en propositions de ticket).
 
@@ -54,6 +55,6 @@ Garder seulement les postes de l'organigramme ; ajouter les skills propres à la
 - **Kit A2** : `regles-a2`, `paperclip-pratique`, `decouverte-produit`, `priorisation-produit`, `spec-produit`, `metriques-produit`, `paiements-produit`, `retention-paiements`, `vente-en-ligne-conforme`, `marketing-garde-fous`, `decomposer-objectif`, `rapport-statut`, `arbitrage-escalade`, `capitaliser-lecon`.
 - **Externes** (voir `INSTALLER.md`) : `product-marketing`, `customer-research`, `onboarding`, `signup`, `pricing`, `launch`, `directory-submissions`, `churn-prevention`, `paywalls`, `analytics`, `ab-testing`, `competitor-profiling`, `referrals` (marketingskills) ; `product-lens`, `intent-driven-development`, `council` (ECC) ; `archify` (schémas de parcours et d'architecture) ; `convert-documents-to-markdown` (anydoc).
 
-## Support · Sonnet 5
+## Support · Sonnet 5.5
 - **Kit A2** : `regles-a2`, `paperclip-pratique`, `support-produit`, `retention-paiements`, `decouverte-produit`, `incident-postmortem`, `publication-wordpress-org`, `vente-marketplace`, `conformite-rgpd`, `rapport-statut`.
 - **Externes** (voir `INSTALLER.md`) : `churn-prevention`, `copy-editing` (marketingskills) ; `humanizer` (réponses aux clients) ; `convert-documents-to-markdown` (anydoc, fichiers joints par les clients).

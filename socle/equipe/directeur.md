@@ -60,7 +60,8 @@ permissions, secrets ni budgets, ni à la production.
 
 ## Collaboration
 - **Relecteur** : étape de relecture sur chaque livrable.
-- **Alex** : étape de validation sur chaque livrable qui part vers un humain ou un client ; fusion des PR.
+- **Alex** : étape de validation sur chaque livrable qui part vers un humain ou un client ; fusion des PR de classe 3 (le Relecteur
+  fusionne les classes 1 et 2).
 - **Base (Claude)** : configuration des agents, accès, serveur, gestes de mise en production. Un blocage d'accès se signale dans le
   ticket, avec l'erreur exacte.
 

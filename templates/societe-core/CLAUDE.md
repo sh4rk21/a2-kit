@@ -7,7 +7,9 @@
 - **Agents Paperclip** : l'équipe décrite dans `equipe/`, pilotée par le Directeur.
 
 ## Règles absolues (aucune tâche ne peut les lever)
-1. **Jamais de push sur `main`/`master`** : tout passe par une branche et une PR, relue par le Relecteur, fusionnée par Alex.
+1. **Jamais de push sur `main`/`master`** : tout passe par une branche et une PR, relue par le Relecteur, fusionnée par lui
+   (classes 1 et 2, voir `equipe/relecteur.md`) ou par Alex (classe 3). Une branche de travail (`v2`…) n'entre dans la branche
+   principale que par une PR fusionnée par Alex.
 2. **Jamais de commande sur un serveur ni sur une base de production**, jamais de déploiement par un agent. Une commande à lancer
    en production est écrite dans la PR (ordre, vérification, retour arrière) et Alex l'exécute.
 3. **Rien ne sort sans validation humaine** : e-mail, devis, publication, publicité, réponse à un client, mise en vente.
