@@ -34,6 +34,8 @@ Garder seulement les postes de l'organigramme ; ajouter les skills propres à la
 ## Sécurité · Opus 5.5
 - **Kit A2** : `regles-a2`, `paperclip-pratique`, `audit-securite`, `securite-owasp`, `isolation-donnees`, `secrets-et-dependances`, `livraison-production`.
 - **Externes** (voir `INSTALLER.md`) : `verification-before-completion` (superpowers) ; `database-migrations`, `production-audit`, `docker-patterns` (ECC) ; `laravel-security` (ECC), seulement pour une société qui a du PHP ou du Laravel ; `documentation-lookup` (Context7).
+- **Strix** (`tiers/strix`, 8 skills) : à activer seulement quand Alex aura choisi le modèle d'IA de Strix ; il tourne alors sur le
+  serveur de test, lancé par la Base.
 
 ## Designer · Opus 5.5
 - **Kit A2** : `regles-a2`, `paperclip-pratique`, `design-decouverte`, `design-references`, `design-direction`, `design-systeme`, `design-critique`, `accessibilite-rgaa`, `ui-controle-visuel`, `passation`.

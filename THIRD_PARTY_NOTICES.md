@@ -35,3 +35,14 @@ WordPress/agent-skills, blader/humanizer, DietrichGebert/ponytail, catalogue Pap
 - Modifications : version de l'outil figée (`@firecrawl/anydoc@0.2.4`) ; la règle sur l'OCR hébergé est remplacée par son
   interdiction (envoi du document à un service externe) ; note « Version A2 (modifiée) » en tête du SKILL.md. Script :
   `scripts/sync-tiers.sh`.
+
+## usestrix/strix — `tiers/strix/*` et `socle/skills/audit-securite` (§ 2 bis)
+- Source : https://github.com/usestrix/strix (commit `9ed84f9`), dossier `skills/`, licence Apache-2.0 (`tiers/strix/LICENSE`).
+- `tiers/strix/*` : 8 skills sur 9 (`managed-pentesting-with-strix`, qui pilote l'offre cloud payante, n'est pas copié ; d'autres
+  skills y renvoient encore). Modifications (Apache-2.0, section 4) : l'installation par script téléchargé et passé au shell est
+  remplacée par `pipx install strix-agent` (motif refusé par le contrôle de sécurité de Paperclip) ; note « Version A2 (modifiée) » en
+  tête de chaque SKILL.md. **Non activés** sur les agents tant qu'Alex n'a pas choisi le modèle d'IA de Strix.
+- `audit-securite` § 2 bis : grilles OWASP Top 10:2025 et API Security Top 10:2023 et méthode de preuve, adaptées et traduites de
+  `owasp-top-10-testing`, `api-security-testing`, `web-app-penetration-testing` et `find-security-vulnerabilities-in-code`, réécrites
+  pour une relecture sans l'outil Strix.
+
