@@ -16,7 +16,7 @@ Kit commun des équipes d'agents des sociétés A2 (Paperclip + Claude) : des **
 |---|---|
 | Direction | `regles-a2`, `paperclip-pratique`, `decomposer-objectif`, `rapport-statut`, `passation`, `capitaliser-lecon`, `arbitrage-escalade`, `creer-un-skill` |
 | Développement | `spec-avant-code`, `petites-pr`, `secrets-et-dependances` |
-| Relecture et qualité | `relecture`, `securite-owasp`, `isolation-donnees`, `livraison-production`, `conformite-rgpd` |
+| Relecture et qualité | `relecture`, `audit-securite`, `securite-owasp`, `isolation-donnees`, `livraison-production`, `conformite-rgpd` |
 | Design | `design-decouverte`, `design-references`, `design-direction`, `design-systeme`, `design-critique`, `ui-integration`, `ui-controle-visuel`, `accessibilite-rgaa` |
 | Commercial et marketing | `marketing-garde-fous`, `prospection`, `email-prospection`, `pipeline-crm`, `linkedin-fondateur`, `etude-de-cas`, `rapport-croissance` |
 

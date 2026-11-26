@@ -7,7 +7,7 @@ agents, en une fois, et le note dans le ticket. Le Directeur ne modifie pas les 
 Réglages communs : adaptateur `claude_local`, 1 exécution à la fois, réveil automatique désactivé, réveil à la demande activé,
 300 tours au plus et 60 minutes au plus par exécution, nouvelle session après 10 réveils ou 24 heures sur un même ticket, secret
 `CLAUDE_CODE_OAUTH_TOKEN` de la société. Seul le Directeur peut demander une embauche ou créer un skill.
-Effort de réflexion : élevé pour le Relecteur, le Responsable produit et le Chef de projet ; moyen pour les autres.
+Effort de réflexion : élevé pour le Relecteur, la Sécurité, le Responsable produit et le Chef de projet ; moyen pour les autres.
 
 Garder seulement les postes de l'organigramme ; ajouter les skills propres à la société et ceux des technologies de ses projets.
 
@@ -30,6 +30,10 @@ Garder seulement les postes de l'organigramme ; ajouter les skills propres à la
   `python-testing`, `fastapi-patterns`, `django-patterns` ; PHP : `laravel-patterns`, `laravel-security`, `laravel-tdd` ; bases de données :
   `postgres-patterns`, `mysql-patterns`, `prisma-patterns` ; Docker : `docker-patterns` (ECC) ; WordPress : skills officiels
   `WordPress/agent-skills`. Pas de skill disponible pour une technologie (exemple : Redis) : `documentation-lookup` (Context7).
+
+## Sécurité · Opus 5.5
+- **Kit A2** : `regles-a2`, `paperclip-pratique`, `audit-securite`, `securite-owasp`, `isolation-donnees`, `secrets-et-dependances`, `livraison-production`.
+- **Externes** (voir `INSTALLER.md`) : `verification-before-completion` (superpowers) ; `database-migrations`, `production-audit`, `docker-patterns` (ECC) ; `laravel-security` (ECC), seulement pour une société qui a du PHP ou du Laravel ; `documentation-lookup` (Context7).
 
 ## Designer · Opus 5.5
 - **Kit A2** : `regles-a2`, `paperclip-pratique`, `design-decouverte`, `design-references`, `design-direction`, `design-systeme`, `design-critique`, `accessibilite-rgaa`, `ui-controle-visuel`, `passation`.

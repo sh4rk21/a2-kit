@@ -42,7 +42,12 @@ l'auteur quand une correction est demandée.
 **Poser les étapes** (Directeur, ou l'auteur du ticket), une fois, à la création du ticket :
 - livrable qui part vers un humain ou un client (proposition, devis, maquette, e-mail, contenu public) : **relecture** par le
   Relecteur, puis **validation** par l'humain qui décide (son `userId` est dans les spécificités de la fiche Directeur) ;
-- code ou document du repo : **relecture** seule (l'humain valide en fusionnant la PR).
+- code ou document du repo : **relecture** seule (l'humain valide en fusionnant la PR) ;
+- **PR sensible** (connexion, comptes, droits, cloisonnement ; secrets ; fichiers reçus ; appels sortants vers une adresse saisie ;
+  paiement ; migration ; infrastructure, CI ; dépendances ; tout point de la classe 3) : **relecture** par le Relecteur, puis
+  **relecture** par l'agent Sécurité, bloquante. Dans le doute, on pose l'étape Sécurité.
+  `{ "type": "review", "participants": [ { "type": "agent", "agentId": "<id de l'agent Sécurité>" } ] }` se place juste après
+  l'étape du Relecteur (et avant une éventuelle validation humaine).
 ```json
 PATCH /api/issues/{issueId}
 { "executionPolicy": { "stages": [

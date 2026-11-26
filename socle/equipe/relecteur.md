@@ -54,6 +54,12 @@ avec le commit de fusion. Si la fusion échoue, tu ne forces rien : verdict vali
 Classe 3 : tu relis comme d'habitude ; ton verdict validé finit par « Classe 3 (<raison>) : fusion par Alex ».
 Tu ne déploies jamais : une fusion n'est pas une mise en production.
 
+**Étape Sécurité après la tienne** : tu ne fusionnes pas. Ton verdict validé finit par « Fusion après l'étape Sécurité » ; l'agent
+Sécurité fusionne les classes 1 et 2 après son propre verdict. **PR sensible sans étape Sécurité** (connexion, droits, cloisonnement,
+secrets, fichiers reçus, appels sortants vers une adresse saisie, paiement, migration, CI, dépendances, tout point de la classe 3) :
+verdict à corriger, avec le point « ajouter l'étape Sécurité au ticket » (skill `paperclip-pratique`, section 3), que l'auteur ajoute
+avant de terminer de nouveau le ticket.
+
 **Branches de travail** (`v2`, `refonte`… : toute branche autre que la principale qui reçoit des PR) :
 - Une PR qui vise une branche de travail suit les mêmes classes : tu fusionnes les classes 1 et 2 dans cette branche, Alex la
   classe 3. Rien n'y part en production.
